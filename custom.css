@@ -1,48 +1,80 @@
 body {
   margin: 0px;
 }
-a {
-  color: black;
-  text-decoration: none;
-}
-a:hover {
-  color: black;
-  text-decoration: none;
-}
-.col {
-  /*max-width: 200px;*/
+.wrapper {
   width: 100%;
-  text-align: center;
+  height: 100%;
+  max-width: 1000px;
+  padding: 0;
+  margin:0 auto;
+}
+.index-table {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+.index-table td {
+  padding: 0.3%;
 }
 .box {
   display: block;
-  margin: 0;
   padding: 0;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  padding-top: 100%;
   border: 1px solid black;
   text-align: center;
   position: relative;
   left: 0;
   right: 0;
-  display: inline-block;
+  color: black;
+  text-decoration: none;
 }
-.box:hover {
+a.box:hover {
   background-color: grey;
 }
-.upper-year {
-  display: block;
-  font-size: 20px;
+.box.empty {
+  color: grey !important;
+  border: none;
 }
-.title {
+span.title {
   display: block;
-  font-size: 50px;
-  margin-top: 15%;
-}
-.type {
-  font-size: 30px;
   position: absolute;
-  bottom: 0;
+  top: 30%;
   left: 0;
   right: 0;
+  box-sizing: border-box;
+  font-size: 18%;
+  line-height: 100%;
+  font-weight: 600;
+}
+span.subtitle {
+  display: block;
+  position: absolute;
+  top: 49%;
+  left: 0;
+  right: 0;
+  font-size: 14%;
+  line-height: 100%;
+  font-weight: 600;
+}
+span.type {
+  display: block;
+  position: absolute;
+  font-size: 13%;
+  line-height: 100%;
+  font-weight: 400;
+  bottom: 1%;
+  left: 0;
+  right: 0;
+}
+a.box.we {
+  background-color: black;
+  color: white;
+}
+a.box.we:hover {
+  background-color: grey;
+  border-color: grey;
+}
+span.title.we {
+  font-size: 27%;
 }
