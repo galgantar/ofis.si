@@ -7,7 +7,7 @@ function insertRandomImage() {
   textColor = images[keys[index]];
 
   imageLocation = document.querySelector("#main-image");
-  imageLocation.setAttribute("src", "images/index_images/" + randomPhoto);
+  imageLocation.setAttribute("src", "images/index/" + randomPhoto);
 
   textLocationsList = document.querySelectorAll(".links, a");
   textLocationsList.forEach(element => {
