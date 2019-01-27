@@ -12,7 +12,7 @@ function insertRandomImage() {
   textLocationsList = document.querySelectorAll(".links, a");
   textLocationsList.forEach(element => {
     element.style.color = textColor;
-    element.style.fontFamily = "Muli,sans-serif";
+    element.style.fontFamily = "Verdana";
     }
   );
 }
