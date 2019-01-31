@@ -1,15 +1,15 @@
 html {
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
   height: inherit;
   width: inherit;
-  scroll-behavior: smooth;
 }
 h1 {
-  margin: 8% 0 0 0;
+  margin: 15% 0 1% 0;
   font-size: 200%;
   font-weight: 600;
   line-height: 100%;
@@ -38,7 +38,7 @@ h4 {
   width: 100%;
   table-layout: fixed;
   border-spacing: 0;
-  margin-bottom: 5%;
+  margin-bottom: 13%;
   margin-top: 1%;
 }
 .index-table td {
@@ -57,11 +57,20 @@ h4 {
   text-decoration: none;
 }
 a.box:hover {
-  background-color: grey;
+  background-color: black;
+  color: white;
 }
 .box.empty {
   color: grey !important;
   border: none;
+  font-size: 650% !important;
+  /*no select*/
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 span.title {
   display: block;
@@ -87,7 +96,7 @@ span.subtitle {
 span.type {
   display: block;
   position: absolute;
-  font-size: 13%;
+  font-size: 11%;
   line-height: 100%;
   font-weight: 400;
   bottom: 3%;
@@ -105,8 +114,9 @@ a.box.we:hover {
 span.title.we {
   font-size: 27%;
 }
-hr.break {
-  height: 0.15em;
+.break {
+  height: 0.3vw;
+  max-height: 3px;
   background-color: black;
   border: none;
   margin: 0;
@@ -121,7 +131,7 @@ hr.break {
   display: block;
   font-size: 100%;
   line-height: 100%;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0.7vw 0;
 }
 .page-box {
@@ -132,7 +142,7 @@ hr.break {
   border: 0.1em solid black;
   text-align: center;
   float: left;
-  margin-bottom: 5%;
+  margin-bottom: 15%;
   margin-top: 1%;
 }
 span.page-title {
@@ -166,6 +176,10 @@ span.page-type {
   font-weight: 400;
   bottom: 1%;
 }
+.anchor-list {
+  list-style: none;
+  padding-left: 0;
+}
 .anchors {
   text-align: left;
   clear: both;
@@ -188,6 +202,7 @@ a.title-1 {
   line-height: 100%;
   text-decoration: none;
   color: black;
+  margin-bottom: 1%;
 }
 .page-back-box {
   display: table-cell;
@@ -237,7 +252,7 @@ a.title-1 {
   width: 50%;
   text-align: left;
   float: left;
-  margin: 7.6% 0;
+  margin: 11.9% 0;
 }
 .data-box-datatype {
   font-size: 100%;
@@ -247,7 +262,8 @@ a.title-1 {
   font-weight: 700;
 }
 .project-inner-break {
-  height: 0.1rem;
+  height: 0.2vw;
+  max-height: 2px;
   background-color: black;
   border: none;
   margin: 0;
@@ -255,15 +271,16 @@ a.title-1 {
 }
 .vertical-line {
   position: absolute;
-  top: 9%;
+  top: 17%;
   left: 41%;
-  width: 0.4%;
-  height: 33%;
+  width: 0.2vw;
+  max-width: 2px;
+  height: 18%;
   background-color: black;
 }
 .vertical-line.bottom {
   top: auto !important;
-  bottom: 9% !important;
+  bottom: 15% !important;
 }
 .project-image {
   width: 50%;
@@ -287,6 +304,7 @@ a.title-1 {
 }
 .we-content-link {
   color: brown;
+  line-height: 150%;
 }
 .we-content {
   font-size: 100%;
@@ -327,35 +345,38 @@ p.we-paragraph {
 .publication {
   display: block;
   padding: 0;
-  margin: 5% 0 1% 0;
+  margin: 5% 0 3% 0;
+  width: 50%;
+  float: left;
   overflow: hidden;
 }
 .publication-name {
   display: block;
-  width: 45%;
+  width: 44%;
   float: left;
+  margin:0 3%;
 }
 .publication-image {
   display: block;
   width: 50%;
   float: right;
 }
-.publication-small {
+.small {
+  font-size: 90%;
+}
+.third {
+  width: 33.33% !important;
+}
+.bold {
+  font-weight: bold !important;
+}
+.publication-third {
   display: block;
   padding: 0;
   margin: 5% 0 3% 0;
-  width: 50%;
+  width: 33.33%;
   float: left;
   overflow: hidden;
-}
-.publication-small-name {
-  display: block;
-  width: 44%;
-  float: left;
-  margin:0 3%;
-}
-.small {
-  font-size: 90%;
 }
 .mirror {
   transform: rotate(-45deg);
@@ -393,6 +414,9 @@ p.project-description {
   }
   .project-datatype {
     margin-right: 40% !important;
+  }
+  .removing-hr {
+    display: block !important;
   }
 }
 .project-databox {
@@ -443,4 +467,13 @@ p.project-description {
   top:0;
   bottom:0;
   width:100%;
+}
+.removing-hr {
+  display: none;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  height: 0.2vw;
+  max-height: 2px;
+  width: 100%;
 }
