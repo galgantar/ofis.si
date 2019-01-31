@@ -22,7 +22,7 @@ h4 {
   clear: both;
   font-size: 120%;
   line-height: 100%;
-  margin: 2% 0 0.5% 0;
+  margin: 10% 0 1.5% 0;
 }
 .wrapper {
   font-family: 'Verdana', sans-serif;
@@ -39,7 +39,7 @@ h4 {
   table-layout: fixed;
   border-spacing: 0;
   margin-bottom: 13%;
-  margin-top: 1%;
+  margin-top: 2.2%;
 }
 .index-table td {
   padding: 0.3%;
@@ -63,7 +63,7 @@ a.box:hover {
 .box.empty {
   color: grey !important;
   border: none;
-  font-size: 650% !important;
+  font-size: 700% !important;
   /*no select*/
   user-select: none;
   -webkit-touch-callout: none;
@@ -75,21 +75,21 @@ a.box:hover {
 span.title {
   display: block;
   position: absolute;
-  top: 30%;
+  top: 34%;
   left: 0;
   right: 0;
   box-sizing: border-box;
-  font-size: 18%;
+  font-size: 17%;
   line-height: 100%;
   font-weight: 600;
 }
 span.subtitle {
   display: block;
   position: absolute;
-  top: 49%;
+  top: 53%;
   left: 0;
   right: 0;
-  font-size: 14%;
+  font-size: 11%;
   line-height: 100%;
   font-weight: 600;
 }
@@ -99,7 +99,7 @@ span.type {
   font-size: 11%;
   line-height: 100%;
   font-weight: 400;
-  bottom: 3%;
+  bottom: 5%;
   left: 0;
   right: 0;
 }
@@ -108,8 +108,8 @@ a.box.we {
   color: white;
 }
 a.box.we:hover {
-  background-color: grey;
-  border-color: grey;
+  background-color: #824747;
+  border-color: #824747;
 }
 span.title.we {
   font-size: 27%;
@@ -125,11 +125,11 @@ span.title.we {
 .general-image {
   width: 100%;
   height: auto;
-  margin: 5vw  0 2vw 0;
+  margin: 9vw  0 2vw 0;
 }
 .description {
   display: block;
-  font-size: 100%;
+  font-size: 85%;
   line-height: 100%;
   font-weight: 400;
   margin: 0.7vw 0;
@@ -142,8 +142,8 @@ span.title.we {
   border: 0.1em solid black;
   text-align: center;
   float: left;
-  margin-bottom: 15%;
-  margin-top: 1%;
+  margin-bottom: 21%;
+  margin-top: 2.2%;
 }
 span.page-title {
   display: block;
@@ -174,7 +174,7 @@ span.page-type {
   font-size: 120%;
   line-height: 100%;
   font-weight: 400;
-  bottom: 1%;
+  bottom: 9%;
 }
 .anchor-list {
   list-style: none;
@@ -232,7 +232,7 @@ a.title-1 {
   font-size: 100%;
 }
 .project-box {
-  margin: 5% 0 2% 0;
+  margin: 8% 0 2% 0;
 }
 .upper-title-description {
   font-size: 100%;
@@ -246,7 +246,7 @@ a.title-1 {
 }
 .project-inner {
   display: block;
-  width: 96%;
+  width: 87%;
 }
 .data-box {
   width: 50%;
@@ -292,7 +292,7 @@ a.title-1 {
 }
 .page-title.we {
   top: 30% !important;
-  font-size: 320% !important;
+  font-size: 300% !important;
 }
 .page-title.we, .page-type.we {
   color: white !important;
@@ -301,16 +301,18 @@ a.title-1 {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
+  margin-top: 5%;
 }
 .we-content-link {
   color: brown;
-  line-height: 150%;
+  line-height: 181%;
 }
 .we-content {
   font-size: 100%;
 }
 .we-architects-table {
   width: 100%;
+  margin-top: 8%;
 }
 img.architect {
   display: block;
@@ -332,9 +334,9 @@ img.architect {
   clear:both;
 }
 .we-column {
-  width: 25%;
+  width: 23%;
   float: left;
-  margin: 1% 0;
+  margin: 1% 1%;
 }
 .we-link {
   color: brown;
@@ -345,16 +347,16 @@ p.we-paragraph {
 .publication {
   display: block;
   padding: 0;
-  margin: 5% 0 3% 0;
+  margin: 10% 0 3% 0;
   width: 50%;
   float: left;
   overflow: hidden;
 }
 .publication-name {
   display: block;
-  width: 44%;
+  width: 43%;
   float: left;
-  margin:0 3%;
+  margin: 0 0.5% 0 5.5%;
 }
 .publication-image {
   display: block;
@@ -362,7 +364,7 @@ p.we-paragraph {
   float: right;
 }
 .small {
-  font-size: 90%;
+  font-size: 80%;
 }
 .third {
   width: 33.33% !important;
@@ -385,6 +387,7 @@ p.we-paragraph {
 p.project-description {
   background-color: #eaeaea;
   line-height: 135%;
+  font-size: 80%;
 }
 .container {
   min-width: 0;
@@ -425,6 +428,7 @@ p.project-description {
   margin-top: 5%;
   margin-bottom: 5%;
   position: relative;
+  font-size: 85%;
 }
 .project-datatype {
   font-size: 100%;
