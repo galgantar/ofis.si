@@ -22,7 +22,7 @@ h4 {
   clear: both;
   font-size: 120%;
   line-height: 100%;
-  margin: 10% 0 1.5% 0;
+  margin: 1.5% 0 1.5% 0;
 }
 .wrapper {
   font-family: 'Verdana', sans-serif;
@@ -33,6 +33,12 @@ h4 {
 }
 .ninja {
   visibility: hidden;
+}
+.spacer {
+  visibility: hidden;
+  clear: both;
+  padding: 0;
+  margin: 0;
 }
 .index-table {
   width: 100%;
@@ -122,6 +128,13 @@ span.title.we {
   margin: 0;
   clear: both;
 }
+.press-break {
+  display: flex;
+  outline: 1px solid black;
+  border: none;
+  margin: 0;
+  clear: both;
+}
 .general-image {
   width: 100%;
   height: auto;
@@ -134,6 +147,10 @@ span.title.we {
   font-weight: 400;
   margin: 0.7vw 0;
 }
+.des-title {
+  font-weight: bold;
+  font-size: 100%;
+}
 .page-box {
   display: table-cell;
   width: 20%;
@@ -142,13 +159,12 @@ span.title.we {
   border: 0.1em solid black;
   text-align: center;
   float: left;
-  margin-bottom: 21%;
   margin-top: 2.2%;
 }
 span.page-title {
   display: block;
   position: absolute;
-  top: 30%;
+  top: 34%;
   left: 0;
   right: 0;
   box-sizing: border-box;
@@ -165,6 +181,7 @@ span.page-subtitle {
   font-size: 170%;
   line-height: 100%;
   font-weight: 600;
+  background-color: red;
 }
 span.page-type {
   display: block;
@@ -179,16 +196,22 @@ span.page-type {
 .anchor-list {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 .anchors {
+  display: inline-block;
+  position: relative;
   text-align: left;
   clear: both;
   margin-bottom: 7%;
+  margin-top: -12%;
+  float: left;
 }
 a.anchor-title {
-  font-size: 100%;
+  font-size: 115%;
   font-weight: 600;
   color: black;
+  line-height: 200%;
 }
 a.anchor-project {
   color: black;
@@ -196,37 +219,40 @@ a.anchor-project {
 a.title-1 {
   display: block;
   width: fit-content;
-  margin: 0 0;
+  margin: 1% 0;
   font-size: 160%;
   font-weight: 600;
   line-height: 100%;
   text-decoration: none;
   color: black;
-  margin-bottom: 1%;
 }
 .page-back-box {
-  display: table-cell;
-  width: 17%;
-  padding-top: 25%;
+  display: block;
+  width: 15%;
+  padding-top: 15%;
   position: relative;
   text-align: center;
   float: left;
+  clear: left;
+  margin-bottom: 15%;
+  margin-top: 1%;
+  margin-left: -3%;
 }
-.page-back-link {
+.back-button {
   position: absolute;
-  top: 27%;
-  left: 27%;
-  margin: auto;
-  border: solid black;
-  border-width: 0 0.3em 0.3em 0;
-  padding: 15%;
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
+  color: black !important;
+  font-size: 530%;
+  font-weight: 400;
+  line-height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .page-button-description {
   position: absolute;
-  top: 59%;
-  left: 30%;
+  top: 67%;
+  left: 0;
+  right: 0;
   text-decoration: none !important;
   color: black !important;
   font-size: 100%;
@@ -249,10 +275,15 @@ a.title-1 {
   width: 87%;
 }
 .data-box {
-  width: 50%;
   text-align: left;
   float: left;
-  margin: 11.9% 0;
+  margin: 13.5% 0;
+}
+.box-left {
+  width: 60%;
+}
+.box-right {
+  width: 40%;
 }
 .data-box-datatype {
   font-size: 100%;
@@ -262,9 +293,9 @@ a.title-1 {
   font-weight: 700;
 }
 .project-inner-break {
-  height: 0.2vw;
-  max-height: 2px;
-  background-color: black;
+  box-sizing: content-box;
+  display: flex;
+  outline: 1px solid black;
   border: none;
   margin: 0;
   clear: both;
@@ -272,11 +303,9 @@ a.title-1 {
 .vertical-line {
   position: absolute;
   top: 17%;
-  left: 41%;
-  width: 0.2vw;
-  max-width: 2px;
+  left: 47%;
+  outline: 1px solid black;
   height: 18%;
-  background-color: black;
 }
 .vertical-line.bottom {
   top: auto !important;
@@ -346,6 +375,7 @@ p.we-paragraph {
 }
 .publication {
   display: block;
+  position: relative;
   padding: 0;
   margin: 10% 0 3% 0;
   width: 50%;
@@ -354,6 +384,9 @@ p.we-paragraph {
 }
 .publication-name {
   display: block;
+  position: absolute;
+  top: 100%;
+  transform: translateY(-100%);
   width: 43%;
   float: left;
   margin: 0 0.5% 0 5.5%;
@@ -363,14 +396,22 @@ p.we-paragraph {
   width: 50%;
   float: right;
 }
+.width-full {
+  width: 100%;
+}
 .small {
   font-size: 80%;
 }
 .third {
   width: 33.33% !important;
+  font-size: 80%;
 }
 .bold {
   font-weight: bold !important;
+}
+.we-year {
+  margin: 10% 0;
+  font-weight: bold;
 }
 .publication-third {
   display: block;
@@ -397,13 +438,13 @@ p.project-description {
   padding-left: 0;
   padding-right: 0;
 }
+.project-spacing-right {
+  margin-right: 2%;
+}
+.project-spacing-left {
+  margin-left: 2%;
+}
 @media (min-width: 576px) {
-  .project-spacing-right {
-    margin-right: 2%;
-  }
-  .project-spacing-left {
-    margin-left: 2%;
-  }
   .project-vertical-line {
     left: 42% !important;
     top: -24% !important;
@@ -438,14 +479,14 @@ p.project-description {
   position: absolute;
   top: -15%;
   left: 34%;
-  width: 0.4%;
   height: 130%;
-  background-color: black;
+  outline: 1px solid black;
 }
 .iframe-container {
   position: relative;
   overflow: hidden;
   padding-top: 66%;
+  margin: 2% 0;
 }
 .responsive-iframe {
     position: absolute;
@@ -472,12 +513,17 @@ p.project-description {
   bottom:0;
   width:100%;
 }
+.maphost {
+   margin-top: 10%;
+   margin-bottom: 4%;
+}
 .removing-hr {
   display: none;
-  background-color: black;
   position: absolute;
   bottom: 0;
-  height: 0.2vw;
-  max-height: 2px;
+  outline: 1px solid black;
   width: 100%;
+}
+.project-desc-box {
+  width: 50%;
 }
