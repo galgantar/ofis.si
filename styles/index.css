@@ -19,11 +19,11 @@ body {
 #links {
   font-family: "Verdana";
   position: absolute;
-  bottom: 5vh;
+  bottom: 4vh;
   left: 5vw;
   z-index: 2;
   color: white;
-  font-size: 130%;
+  font-size: 70%;
   font-weight: 400;
 }
 #links a {

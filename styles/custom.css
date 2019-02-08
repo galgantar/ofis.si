@@ -22,7 +22,7 @@ h4 {
   clear: both;
   font-size: 120%;
   line-height: 100%;
-  margin: 1.5% 0 1.5% 0;
+  margin: 15% 0 1.5% 0;
 }
 .wrapper {
   font-family: 'Verdana', sans-serif;
@@ -39,6 +39,21 @@ h4 {
   clear: both;
   padding: 0;
   margin: 0;
+}
+.s-we-1 {
+  width: 0;
+}
+.s-press-1 {
+  height: 4%;
+}
+.s-project-1 {
+  height: 5%;
+}
+.s-project-2 {
+  height: 13%;
+}
+.s-project-3 {
+  height: 5%;
 }
 .index-table {
   width: 100%;
@@ -109,6 +124,10 @@ span.type {
   left: 0;
   right: 0;
 }
+.news-image {
+  width: 100%;
+  margin: 12% 0 4% 0;
+}
 a.box.we {
   background-color: black;
   color: white;
@@ -121,7 +140,7 @@ span.title.we {
   font-size: 27%;
 }
 .break {
-  height: 0.3vw;
+  height: 0.3%;
   max-height: 3px;
   background-color: black;
   border: none;
@@ -138,14 +157,25 @@ span.title.we {
 .general-image {
   width: 100%;
   height: auto;
-  margin: 9vw  0 2vw 0;
+  margin: 0;
+}
+.news-description {
+  display: block;
+  line-height: 100%;
+  font-weight: 400;
+  margin: 1.5% 0;
 }
 .description {
   display: block;
-  font-size: 85%;
   line-height: 100%;
   font-weight: 400;
-  margin: 0.7vw 0;
+  margin: 2% 0;
+  width: 50%;
+  color: black;
+  text-decoration: none;
+}
+.width-100 {
+  width: 100%;
 }
 .des-title {
   font-weight: bold;
@@ -188,7 +218,7 @@ span.page-type {
   position: absolute;
   left: 0;
   right: 0;
-  font-size: 120%;
+  font-size: 115%;
   line-height: 100%;
   font-weight: 400;
   bottom: 9%;
@@ -208,8 +238,8 @@ span.page-type {
   float: left;
 }
 a.anchor-title {
-  font-size: 115%;
-  font-weight: 600;
+  font-size: 100%;
+  font-weight: 400;
   color: black;
   line-height: 200%;
 }
@@ -235,27 +265,28 @@ a.title-1 {
   float: left;
   clear: left;
   margin-bottom: 15%;
-  margin-top: 1%;
+  margin-top: 3%;
   margin-left: -3%;
 }
 .back-button {
   position: absolute;
   color: black !important;
-  font-size: 530%;
-  font-weight: 400;
+  font-size: 400%;
+  font-weight: 100;
   line-height: 100%;
   top: 0;
   left: 0;
   right: 0;
+  font-family: none;
 }
 .page-button-description {
   position: absolute;
-  top: 67%;
+  top: 48%;
   left: 0;
   right: 0;
   text-decoration: none !important;
   color: black !important;
-  font-size: 100%;
+  font-size: 75%;
 }
 .project-box {
   margin: 8% 0 2% 0;
@@ -286,7 +317,7 @@ a.title-1 {
   width: 40%;
 }
 .data-box-datatype {
-  font-size: 100%;
+  font-size: 81%;
 }
 .data-box-data {
   font-size: 100%;
@@ -330,7 +361,6 @@ a.title-1 {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
-  margin-top: 5%;
 }
 .we-content-link {
   color: brown;
@@ -378,18 +408,21 @@ p.we-paragraph {
   position: relative;
   padding: 0;
   margin: 10% 0 3% 0;
-  width: 50%;
+  width: 100%;
   float: left;
-  overflow: hidden;
 }
 .publication-name {
   display: block;
   position: absolute;
   top: 100%;
-  transform: translateY(-100%);
-  width: 43%;
+  width: 94%;
   float: left;
   margin: 0 0.5% 0 5.5%;
+}
+.publicaton-name-main {
+  margin: 0 0.5% 0 0 !important;
+  width: 46% !important;
+  transform: translateY(-100%);
 }
 .publication-image {
   display: block;
@@ -399,31 +432,28 @@ p.we-paragraph {
 .width-full {
   width: 100%;
 }
-.small {
-  font-size: 80%;
-}
 .third {
   width: 33.33% !important;
+  font-size: 70%;
+}
+.half {
+  width: 50% !important;
   font-size: 80%;
 }
 .bold {
   font-weight: bold !important;
 }
 .we-year {
-  margin: 10% 0;
   font-weight: bold;
-}
-.publication-third {
+  margin: 20% 0 16% 0;
   display: block;
-  padding: 0;
-  margin: 5% 0 3% 0;
-  width: 33.33%;
-  float: left;
-  overflow: hidden;
 }
-.mirror {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+.project-fullscreen-image {
+  width: 100%;
+}
+.back-button-2 {
+  clear: none;
+  margin-left: -8%;
 }
 p.project-description {
   background-color: #eaeaea;
@@ -434,15 +464,21 @@ p.project-description {
   min-width: 0;
   max-width: none;
 }
+.quick-facts {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
 .col-12, .col-sm-6 {
   padding-left: 0;
   padding-right: 0;
 }
 .project-spacing-right {
   margin-right: 2%;
+  margin-bottom: 0;
 }
 .project-spacing-left {
   margin-left: 2%;
+  margin-bottom: 0;
 }
 @media (min-width: 576px) {
   .project-vertical-line {
@@ -485,8 +521,8 @@ p.project-description {
 .iframe-container {
   position: relative;
   overflow: hidden;
-  padding-top: 66%;
-  margin: 2% 0;
+  padding-top: 67%;
+  margin: 0;
 }
 .responsive-iframe {
     position: absolute;
@@ -513,10 +549,6 @@ p.project-description {
   bottom:0;
   width:100%;
 }
-.maphost {
-   margin-top: 10%;
-   margin-bottom: 4%;
-}
 .removing-hr {
   display: none;
   position: absolute;
@@ -526,4 +558,12 @@ p.project-description {
 }
 .project-desc-box {
   width: 50%;
+}
+.carousel-indicators li {
+  height: 7px;
+  width: 7px;
+  border-radius: 100%;
+}
+.image-link {
+  display: contents;
 }
