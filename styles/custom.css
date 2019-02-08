@@ -347,6 +347,7 @@ a.title-1 {
   height: auto;
   margin: 0;
 }
+
 .page-box.we {
   background-color: black !important;
 }
@@ -356,6 +357,29 @@ a.title-1 {
 }
 .page-title.we, .page-type.we {
   color: white !important;
+}
+.social-table {
+  float: left;
+  table-layout: fixed;
+  border-spacing: 1%;
+  width: 30%;
+  margin-top: 2.2%;
+  margin-left: 7%;
+}
+.social-table tr {
+  width: 100%;
+}
+.social-table td {
+  padding: 0;
+  margin: 0;
+  border: 0.01em solid black;
+}
+.social-empty {
+  visibility: hidden;
+}
+.logo-image {
+  display: block;
+  width: 100%;
 }
 .we-content-list {
   list-style-type: none;
