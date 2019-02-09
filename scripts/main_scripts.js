@@ -6,18 +6,7 @@ function divideByX(currentWidth, number) {
 }
 
 setInterval(function() {
-  //wrapper
   wrapper = document.querySelector(".wrapper");
-  width = getComputedStyle(wrapper).width; //velikost besedila je odvisna od trenutne širine zaslona
+  width = getComputedStyle(wrapper).width; //velikost besedila je odvisna od trenutne širine wrapperja
   wrapper.style.fontSize = (divideByX(width, 50));
-
-  //boxes
-  if (location.href.split("/").slice(-1) == "home.html" || location.href.split("/").slice(-1) == "domov.html") {
-    nodeList = document.querySelectorAll(".box");
-    height = getComputedStyle(document.querySelector(".box")).width; //width == hegiht
-    nodeList.forEach(element => {
-      element.style.fontSize = height;
-      }
-    );
-  }
 }, 10);

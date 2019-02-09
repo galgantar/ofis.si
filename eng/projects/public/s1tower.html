@@ -84,7 +84,7 @@
           <div class="project-desc-box">
             <p class="project-description project-spacing-right">
               The building is located in the business centre of Ljubljana. It creates a gate together with existing tower from the 1960s in the northern entrance to the city. The volume was pre-determined by strict urban rules and competition from 2007. The maximum height limit is at 82m.
-              The concept defines the massing as clear assembling of platforms in order to dissolve the given massing into the urban landscape. The result is a Slab Tower- growing horizontal changing slabs following the fixed urban volume.
+              The concept defines the massing as clear assembling of platforms in order to dissolve the given massing into the urban landscape. The result is a Slab Tower - growing horizontal changing slabs following the fixed urban volume.
               The opaque aluminium horizontal elements contrast with the transparent glass panels, diminishing the presence of the building in the urban context. The aim was to incorporate the building to the existing urban context creating a cityscape. It is more an aggregation to the existing towers than an element that stands out as a contrast. Special care was taken to get glazed areas as transparent as possible. In some of these areas, traditional Slovenian motifs are featured in the form of a print pattern over the glass, featuring different sizes.
               The program consists of 185 hotel rooms, lobby with a café in Ground Floor, SPA facility with a pool and a Restaurant on the roof. The restaurant also has a rooftop terrace with nice views overlooking the city. Most of the BOH program is located underground.
             </p>
@@ -151,8 +151,34 @@
       <div class="maphost">
         <div id='map'></div>
       </div>
-      <div class="spacer s-project-3"></div>
-      <script src="../../../scripts/maphost.js"></script>
+      <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FsZyIsImEiOiJjanJmNW9hNHIxYm1tM3ltcjI2aXU0MDIzIn0.7pycMDkcQIe7rzpcCJId9g';
+        const map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/galg/cjrf6m7uh4cx22smytg9o5f5v', //hosted style id
+        center: [15.150,46.069], // starting position
+        zoom: 6.5 // starting zoom
+        });
+
+        map.on('click', function(e) {
+          var features = map.queryRenderedFeatures(e.point, {
+            layers: ['ofis-projects'] // replace this with the name of the layer
+          });
+
+          if (!features.length) {
+            return;
+          }
+
+          var feature = features[0];
+
+          var popup = new mapboxgl.Popup({ offset: [0, -15] })
+            .setLngLat(feature.geometry.coordinates)
+            .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+            .setLngLat(feature.geometry.coordinates)
+            .addTo(map);
+        });
+      </script>
+    <div class="spacer s-project-3"></div>
     </div>
   </body>
 </html>
