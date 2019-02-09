@@ -1,8 +1,11 @@
+html {
+  overflow: hidden;
+}
 body {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  overflow: hidden;
+  height: 100%;
 }
 #main-image {
   display: block;
@@ -30,11 +33,21 @@ body {
   color: inherit;
   text-decoration: none;
 }
-#logo-image {
+#logo-container {
   width: 85%;
   position: absolute;
   z-index: 10;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
+}
+#logo-image {
+  width: 100%;
+}
+.animate{
+  animation:opac 5s
+}
+@keyframes opac{
+  from{opacity:0}
+  to{opacity:1}
 }

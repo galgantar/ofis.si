@@ -1,3 +1,14 @@
+function divideByX(currentWidth, number) {
+  //funkcija dobi "52px" (vrednost v pikslih) ga deli z stevilom in ga pretvori nazaj v "52px"
+  currentWidth = parseInt(currentWidth);
+  currentWidth = currentWidth/number;
+  return currentWidth + "px";
+}
+function checkFontSize() {
+  wrapper = document.querySelector("body");
+  width = screen.width; //velikost besedila je odvisna od trenutne širine zaslona
+  wrapper.style.fontSize = (divideByX(width, 50));
+}
 function getTheValues() {
   imageLocation = document.body.querySelector("#main-image");
   textLocation = document.body.querySelector("#links");
@@ -37,7 +48,6 @@ function alignTheText() {
     textLocation.style.fontSize = null;
   }
 }
-
 setInterval (function() {
   if (typeof wasMobile === 'undefined') {
     if (screen.width < 576) {
@@ -63,4 +73,5 @@ setInterval (function() {
   }
 
   alignTheText();
+  checkFontSize();
 }, 10)
