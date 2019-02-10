@@ -137,6 +137,14 @@ span.type {
   width: 100%;
   margin: 12% 0 4% 0;
 }
+.news-image-small {
+  width: 100%;
+  height: 0;
+  margin: 12% 0 4% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inherit;
+}
 a.box.we {
   background-color: black;
   color: white;
@@ -607,8 +615,10 @@ p.project-description {
 .news-small-section {
   width: 100%;
   overflow: auto;
+  display: inherit;
 }
 .news-small {
+  display: inherit;
   width: 49%;
   float: left;
   font-size: 70%;
