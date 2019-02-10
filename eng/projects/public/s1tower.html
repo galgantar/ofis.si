@@ -154,15 +154,15 @@
       <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FsZyIsImEiOiJjanJmNW9hNHIxYm1tM3ltcjI2aXU0MDIzIn0.7pycMDkcQIe7rzpcCJId9g';
         const map = new mapboxgl.Map({
-        container: 'map', // container id
-        style: 'mapbox://styles/galg/cjrf6m7uh4cx22smytg9o5f5v', //hosted style id
-        center: [15.150,46.069], // starting position
-        zoom: 6.5 // starting zoom
+        container: 'map',
+        style: 'mapbox://styles/galg/cjry55l6o16ab1fp312uf8hyi',
+        center: [15.150,46.069],
+        zoom: 6.5
         });
 
         map.on('click', function(e) {
           var features = map.queryRenderedFeatures(e.point, {
-            layers: ['ofis-projects'] // replace this with the name of the layer
+            layers: ['ofis-projects']
           });
 
           if (!features.length) {
