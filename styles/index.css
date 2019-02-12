@@ -45,7 +45,7 @@ body {
   width: 100%;
 }
 .animate{
-  animation: fadeIn 10s;
+  animation: fadeIn 6s;
 }
 @keyframes fadeIn{
   from{opacity:0}
