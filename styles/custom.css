@@ -313,6 +313,18 @@ a.title-1 {
 .upper-title-description {
   font-size: 100%;
 }
+.project-table {
+  width: 100%;
+  border-spacing: 0;
+}
+.project-table tr {
+  width: 100%;
+}
+.project-table td {
+  padding: 0;
+  width: 50%;
+  margin: 0;
+}
 .project-data {
   display: block;
   position: relative;
@@ -321,6 +333,7 @@ a.title-1 {
   float: left;
 }
 .project-inner {
+  position: relative;
   display: block;
   width: 87%;
 }
@@ -351,7 +364,7 @@ a.title-1 {
 .vertical-line {
   position: absolute;
   top: 26%;
-  left: 43%;
+  left: 49%;
   width: 11%;
   height: 1%;
   transform: rotate(90deg);
@@ -366,11 +379,13 @@ a.title-1 {
   border-spacing: 0;
   border-collapse: collapse;
   border-bottom: 0.1rem solid black;
+  box-sizing: border-box;
 }
 .project-image {
-  width: 50%;
+  width: 100%;
   height: auto;
   margin: 0;
+  vertical-align: top;
 }
 
 .page-box.we {
@@ -502,7 +517,7 @@ p.we-paragraph {
 }
 .back-button-2 {
   clear: none;
-  margin-left: 0.5%;
+  margin-left: 2%;
 }
 p.project-description {
   background-color: #eaeaea;
