@@ -163,8 +163,7 @@ span.title.we {
   display: table;
   height: 0;
   width: 100%;
-  outline: 0.01px solid black;
-  border: none;
+  border-bottom: 0.1rem solid black;
   margin: 0;
   clear: both;
 }
@@ -328,7 +327,7 @@ a.title-1 {
 .data-box {
   text-align: left;
   float: left;
-  margin: 13.5% 0;
+  margin: 12.88% 0;
 }
 .box-left {
   width: 60%;
@@ -343,24 +342,30 @@ a.title-1 {
   font-size: 100%;
   font-weight: 700;
 }
-.project-inner-break {
-  box-sizing: content-box;
-  display: flex;
-  outline: 1px solid black;
-  border: none;
-  margin: 0;
-  clear: both;
+.break-table {
+  width: 100.2%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 0.01rem solid black;
 }
 .vertical-line {
   position: absolute;
-  top: 17%;
-  left: 47%;
-  outline: 1px solid black;
-  height: 18%;
+  top: 26%;
+  left: 43%;
+  width: 11%;
+  height: 1%;
+  transform: rotate(90deg);
+  border-bottom: 0.07rem solid black;
 }
 .vertical-line.bottom {
   top: auto !important;
-  bottom: 15% !important;
+  bottom: 24% !important;
+}
+.databox-break-table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 0.1rem solid black;
 }
 .project-image {
   width: 50%;
@@ -524,13 +529,6 @@ p.project-description {
   margin-left: 2%;
   margin-bottom: 0;
 }
-@media (min-width: 576px) {
-  .project-vertical-line {
-    left: 42% !important;
-    top: -24% !important;
-    height: 160% !important;
-  }
-}
 @media (max-width: 576px) {
   .project-databox {
     margin-top: 3% !important;
@@ -539,8 +537,22 @@ p.project-description {
   .project-datatype {
     margin-right: 40% !important;
   }
-  .removing-hr {
+  .removing-break {
     display: block !important;
+  }
+  .project-vertical-line {
+    top: 50% !important;
+    left: 34% !important;
+    width: 10% !important;
+  }
+  .break {
+    border-bottom: 0.05rem solid black !important;
+  }
+  .databox-break-table {
+    border-bottom: 0.01rem solid black !important;
+  }
+  .vertical-line {
+    border-bottom: 0.01rem solid black !important;
   }
 }
 .project-databox {
@@ -557,10 +569,11 @@ p.project-description {
 }
 .project-vertical-line {
   position: absolute;
-  top: -15%;
-  left: 34%;
-  height: 130%;
-  outline: 1px solid black;
+  top: 50%;
+  left: 32%;
+  width: 16%;
+  border-bottom: 0.03rem solid black;
+  transform: rotate(90deg);
 }
 .iframe-container {
   position: relative;
@@ -593,12 +606,10 @@ p.project-description {
   bottom:0;
   width:100%;
 }
-.removing-hr {
-  display: none;
+.removing-break {
   position: absolute;
   bottom: 0;
-  outline: 1px solid black;
-  width: 100%;
+  display: none;
 }
 .project-desc-box {
   width: 50%;
