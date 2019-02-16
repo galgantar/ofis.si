@@ -24,6 +24,9 @@ h4 {
   line-height: 100%;
   margin: 15% 0 1.5% 0;
 }
+a:focus {
+  outline: none !important;
+}
 .wrapper {
   font-family: 'Verdana', sans-serif;
   width: 96%;
@@ -278,13 +281,13 @@ a.title-1 {
 }
 .page-back-box {
   display: block;
-  width: 5%;
-  padding-top: 15%;
+  width: 8%;
+  padding-top: 10%;
   position: relative;
   text-align: center;
   float: left;
   clear: left;
-  margin-bottom: 15%;
+  margin-bottom: 20%;
   margin-top: 3%;
 }
 .back-button {
@@ -300,7 +303,7 @@ a.title-1 {
 }
 .page-button-description {
   position: absolute;
-  top: 48%;
+  top: 69%;
   left: 0;
   right: 0;
   text-decoration: none !important;
@@ -385,7 +388,6 @@ a.title-1 {
   width: 100%;
   height: auto;
   margin: 0;
-  vertical-align: top;
 }
 
 .page-box.we {
@@ -517,7 +519,6 @@ p.we-paragraph {
 }
 .back-button-2 {
   clear: none;
-  margin-left: 2%;
 }
 p.project-description {
   background-color: #eaeaea;
