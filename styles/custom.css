@@ -524,6 +524,7 @@ p.project-description {
   background-color: #eaeaea;
   line-height: 135%;
   font-size: 80%;
+  padding: 3%;
 }
 .container {
   min-width: 0;
@@ -569,6 +570,21 @@ p.project-description {
   }
   .vertical-line {
     border-bottom: 0.01rem solid black !important;
+  }
+  .project-spacing-right {
+    margin-right: 0 !important;
+  }
+  .project-spacing-left {
+    margin-left: 0 !important;
+  }
+  .project-spacing-bottom {
+    margin-bottom: 2%;
+  }
+  .quick-facts {
+    font-size: 150%;
+  }
+  .project-description-row {
+    font-size: 200%;
   }
 }
 .project-databox {
