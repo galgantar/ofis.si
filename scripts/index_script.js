@@ -5,9 +5,12 @@ function divideByX(currentWidth, number) {
   return currentWidth + "px";
 }
 function checkFontSize() {
-  wrapper = document.querySelector("body");
-  width = screen.width; //velikost besedila je odvisna od trenutne širine zaslona
-  wrapper.style.fontSize = (divideByX(width, 50));
+  try {
+    wrapper = document.querySelector("body");
+    width = screen.width; //velikost besedila je odvisna od trenutne širine zaslona
+    wrapper.style.fontSize = (divideByX(width, 50));
+  }
+  catch(error) {}
 }
 function getTheValues() {
   imageLocation = document.body.querySelector("#main-image");

@@ -290,6 +290,10 @@ a.title-1 {
   margin-bottom: 20%;
   margin-top: 3%;
 }
+.page-back-box:active {
+  background-color: #c2c0c0;
+  border-radius: 15%;
+}
 .back-button {
   position: absolute;
   color: black !important;
@@ -343,7 +347,7 @@ a.title-1 {
 .data-box {
   text-align: left;
   float: left;
-  margin: 12.88% 0;
+  margin: 13% 0;
 }
 .box-left {
   width: 60%;
@@ -553,6 +557,7 @@ p.project-description {
   }
   .project-datatype {
     margin-right: 40% !important;
+    float: left !important;
   }
   .removing-break {
     display: block !important;
@@ -595,9 +600,13 @@ p.project-description {
   position: relative;
   font-size: 85%;
 }
+.project-location-field {
+  white-space: nowrap;
+}
 .project-datatype {
   font-size: 100%;
-  margin-right: 10%;
+  float: right;
+  margin-right: 65%;
 }
 .project-vertical-line {
   position: absolute;
@@ -610,7 +619,6 @@ p.project-description {
 .iframe-container {
   position: relative;
   overflow: hidden;
-  padding-top: 67%;
   margin: 0;
 }
 .responsive-iframe {
@@ -627,10 +635,34 @@ p.project-description {
   font-weight: 700;
   margin-left: 5%;
 }
+#carouselExampleIndicators {
+  width: 100%;
+  height: 70%;
+  margin-bottom: 2%;
+  background-color: black;
+}
+.carousel-inner {
+  height: 100%;
+  width: 100%;
+}
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.carousel-image-custom {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
 .maphost {
   position: relative;
   width: 100%;
-  height: 80%;
+  height: 60%;
 }
 #map {
   position:absolute;
