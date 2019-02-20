@@ -6,9 +6,9 @@ function divideByX(currentWidth, number) {
 }
 function checkFontSize() {
   try {
-    wrapper = document.querySelector("body");
+    body = document.querySelector("body");
     width = screen.width; //velikost besedila je odvisna od trenutne širine zaslona
-    wrapper.style.fontSize = (divideByX(width, 50));
+    body.style.fontSize = (divideByX(width, 50));
   }
   catch(error) {}
 }
@@ -43,7 +43,7 @@ function alignTheText() {
   if (screenWidth < 576) {
     textLocation.style.left = "50%";
     textLocation.style.transform = "translateX(-50%)";
-    textLocation.style.fontSize = "1500%";
+    textLocation.style.fontSize = "900%";
   }
   else {
     textLocation.style.left = null;

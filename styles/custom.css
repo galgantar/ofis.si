@@ -33,6 +33,7 @@ a:focus {
   height: 100%;
   max-width: 850px;
   margin: 0 auto;
+  font-size: 100%;
 }
 .ninja {
   visibility: hidden;
@@ -635,9 +636,15 @@ p.project-description {
   font-weight: 700;
   margin-left: 5%;
 }
-#carouselExampleIndicators {
+.carousel-portrait {
   width: 100%;
-  height: 70%;
+  height: 100%;
+  margin-bottom: 2%;
+  background-color: black;
+}
+.carousel-landscape {
+  width: 100%;
+  height: 60%;
   margin-bottom: 2%;
   background-color: black;
 }
@@ -659,10 +666,32 @@ p.project-description {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
 }
-.maphost {
-  position: relative;
-  width: 100%;
-  height: 60%;
+.map-row {
+  height: 50vh;
+  margin-top: -7%;
+  margin-bottom: 3%;
+}
+.map-row-hidden {
+  visibility: hidden;
+  position: absolute;
+}
+.mapboxgl-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.show-map-button {
+  background-image: url("../images/other/arrow_down.svg");
+  height: 0.9em;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  margin-left: 4%;
+}
+.show-map-button:hover {
+  cursor: pointer;
+}
+.show-map-button:focus {
+  outline: none;
 }
 #map {
   position:absolute;
@@ -672,7 +701,7 @@ p.project-description {
 }
 .removing-break {
   position: absolute;
-  bottom: 0;
+  top: 0;
   display: none;
 }
 .project-desc-box {

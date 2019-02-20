@@ -7,9 +7,10 @@ function divideByX(currentWidth, number) {
 
 setInterval(function() {
   try {
+    body = document.querySelector("body");
     wrapper = document.querySelector(".wrapper");
     width = getComputedStyle(wrapper).width; //velikost besedila je odvisna od trenutne širine wrapperja
-    wrapper.style.fontSize = (divideByX(width, 50));
+    body.style.fontSize = (divideByX(width, 50));
   }
   catch(error) {}
 }, 10);
