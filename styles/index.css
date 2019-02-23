@@ -33,6 +33,9 @@ body {
   color: inherit;
   text-decoration: none;
 }
+#text-dividend {
+  margin: 0 13%;
+}
 #logo-container {
   width: 85%;
   position: absolute;

@@ -47,8 +47,15 @@ a:focus {
 .s-we-1 {
   width: 0;
 }
+.s-we-2 {
+  height: 8%;
+}
 .s-press-1 {
   height: 4%;
+}
+.s-press-2 {
+  height: 4%;
+  margin-top: 44%;
 }
 .s-project-1 {
   height: 5%;
@@ -61,6 +68,9 @@ a:focus {
 }
 .s-home-1 {
   height: 3%;
+}
+.s-home-2 {
+  height: 0;
 }
 .index-table {
   width: 100%;
@@ -81,7 +91,7 @@ a:focus {
   display: block;
   width: 100%;
   padding-top: 100%;
-  border: 0.01em solid black;
+  border: 0.07em solid black;
   text-align: center;
   position: relative;
   left: 0;
@@ -142,12 +152,9 @@ span.type {
   margin: 12% 0 4% 0;
 }
 .news-image-small {
-  width: 100%;
-  height: 0;
+  float: left;
+  width: 49%;
   margin: 12% 0 4% 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: inherit;
 }
 a.box.we {
   background-color: black;
@@ -167,7 +174,7 @@ span.title.we {
   display: table;
   height: 0;
   width: 100%;
-  border-bottom: 0.1rem solid black;
+  border-bottom: 0.2rem solid black;
   margin: 0;
   clear: both;
 }
@@ -183,8 +190,11 @@ span.title.we {
   height: auto;
   margin: 0;
 }
+.news-description-section {
+  width: 49%;
+  float: left;
+}
 .news-description {
-  display: block;
   line-height: 100%;
   font-weight: 400;
   margin: 1.5% 0;
@@ -214,6 +224,7 @@ span.title.we {
   text-align: center;
   float: left;
   margin-top: 2.2%;
+  margin-bottom: 15%;
 }
 span.page-title {
   display: block;
@@ -258,7 +269,7 @@ span.page-type {
   text-align: left;
   clear: both;
   margin-bottom: 7%;
-  margin-top: -12%;
+  margin-top: -8%;
   float: left;
 }
 a.anchor-title {
@@ -287,13 +298,18 @@ a.title-1 {
   position: relative;
   text-align: center;
   float: left;
-  clear: left;
-  margin-bottom: 20%;
-  margin-top: 3%;
+  margin-top: 8%;
+  margin-left: 3%;
 }
 .page-back-box:active {
   background-color: #c2c0c0;
   border-radius: 15%;
+}
+.we-back-box {
+  clear: left;
+  margin-top: -10%;
+  margin-bottom: 15%;
+  margin-left: 0;
 }
 .back-button {
   position: absolute;
@@ -348,7 +364,7 @@ a.title-1 {
 .data-box {
   text-align: left;
   float: left;
-  margin: 13% 0;
+  margin: 13.3% 0;
 }
 .box-left {
   width: 60%;
@@ -367,7 +383,7 @@ a.title-1 {
   width: 100.2%;
   border-spacing: 0;
   border-collapse: collapse;
-  border-bottom: 0.01rem solid black;
+  border-bottom: 0.1rem solid black;
 }
 .vertical-line {
   position: absolute;
@@ -376,7 +392,7 @@ a.title-1 {
   width: 11%;
   height: 1%;
   transform: rotate(90deg);
-  border-bottom: 0.07rem solid black;
+  border-bottom: 0.2rem solid black;
 }
 .vertical-line.bottom {
   top: auto !important;
@@ -386,13 +402,14 @@ a.title-1 {
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  border-bottom: 0.1rem solid black;
+  border-bottom: 0.2rem solid black;
   box-sizing: border-box;
 }
 .project-image {
   width: 100%;
   height: auto;
   margin: 0;
+  display: block;
 }
 
 .page-box.we {
@@ -440,20 +457,18 @@ a.title-1 {
 .we-content {
   font-size: 100%;
 }
-.we-architects-table {
-  width: 100%;
-  margin-top: 8%;
-}
 img.architect {
   display: block;
   width: 20%;
   height: auto;
   float: left;
   margin-bottom: 3%;
+  clear: left;
 }
 .architect-des {
   margin-left: 5%;
   float: left;
+  width: 75%;
 }
 .architect-name {
   font-size: 120%;
@@ -524,6 +539,7 @@ p.we-paragraph {
 }
 .back-button-2 {
   clear: none;
+  margin-left: 0;
 }
 p.project-description {
   background-color: #eaeaea;
@@ -569,13 +585,13 @@ p.project-description {
     width: 10% !important;
   }
   .break {
-    border-bottom: 0.05rem solid black !important;
+    border-bottom: 0.1rem solid black !important;
   }
   .databox-break-table {
-    border-bottom: 0.01rem solid black !important;
+    border-bottom: 0.1rem solid black !important;
   }
   .vertical-line {
-    border-bottom: 0.01rem solid black !important;
+    border-bottom: 0.1rem solid black !important;
   }
   .project-spacing-right {
     margin-right: 0 !important;
@@ -584,13 +600,19 @@ p.project-description {
     margin-left: 0 !important;
   }
   .project-spacing-bottom {
-    margin-bottom: 2%;
+    margin-bottom: 8%;
   }
   .quick-facts {
     font-size: 150%;
   }
   .project-description-row {
     font-size: 200%;
+  }
+  .news-description-parent {
+    font-size: 150%;
+  }
+  .news-small {
+    font-size: 100% !important;
   }
 }
 .project-databox {
@@ -614,7 +636,7 @@ p.project-description {
   top: 50%;
   left: 32%;
   width: 16%;
-  border-bottom: 0.03rem solid black;
+  border-bottom: 0.1rem solid black;
   transform: rotate(90deg);
 }
 .iframe-container {
@@ -681,11 +703,13 @@ p.project-description {
 }
 .show-map-button {
   background-image: url("../images/other/arrow_down.svg");
-  height: 0.9em;
+  height: 0.5em;
+  width: 0;
   background-color: transparent;
   border: none;
   background-repeat: no-repeat;
-  margin-left: 4%;
+  margin-left: 28%;
+  box-sizing: content-box;
 }
 .show-map-button:hover {
   cursor: pointer;
@@ -721,29 +745,32 @@ p.project-description {
   display: inherit;
 }
 .news-small {
-  display: inherit;
-  width: 49%;
-  float: left;
+  width: 100%;
   font-size: 70%;
 }
 .float-r {
   float: right;
 }
-.news-display-selector {
-  display: none;
+.news-small-description {
+  width: 50%;
+}
+.archive-margin-top {
+  margin-top: 3% !important;
 }
 #show-more {
+  display: inline-block;
   margin-left: 50%;
   transform: translateX(-50%);
   margin-top: 4%;
   background-color: white;
   color: black;
-  border: 0.1em solid black;
+  border: 0.08em solid black;
   padding: 2% 5%;
-  font-size: 120%;
+  font-size: 100%;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
+  text-decoration: none;
 }
 #show-more:hover {
   background-color: black;
