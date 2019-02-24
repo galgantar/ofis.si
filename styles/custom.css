@@ -18,6 +18,12 @@ h1 {
 h2 {
   margin: 0 0;
 }
+h3 { /*used as a title in projects page*/
+  clear: both;
+  font-size: 200%;
+  line-height: 100%;
+  margin: 15% 0 1.5% 0;
+}
 h4 {
   clear: both;
   font-size: 120%;
@@ -64,7 +70,7 @@ a:focus {
   height: 13%;
 }
 .s-project-3 {
-  height: 5%;
+  height: 13%;
 }
 .s-home-1 {
   height: 3%;
@@ -467,6 +473,7 @@ img.architect {
 }
 .architect-des {
   margin-left: 5%;
+  margin-top: 1%;
   float: left;
   width: 75%;
 }
@@ -614,6 +621,9 @@ p.project-description {
   .news-small {
     font-size: 100% !important;
   }
+  .show-map-button {
+    width: 0.1em !important;
+  }
 }
 .project-databox {
   width: 50%;
@@ -658,15 +668,8 @@ p.project-description {
   font-weight: 700;
   margin-left: 5%;
 }
-.carousel-portrait {
+.carousel-custom {
   width: 100%;
-  height: 100%;
-  margin-bottom: 2%;
-  background-color: black;
-}
-.carousel-landscape {
-  width: 100%;
-  height: 60%;
   margin-bottom: 2%;
   background-color: black;
 }
@@ -704,7 +707,8 @@ p.project-description {
 .show-map-button {
   background-image: url("../images/other/arrow_down.svg");
   height: 0.5em;
-  width: 0;
+  width: 0.5em;
+  padding-left: 0%;
   background-color: transparent;
   border: none;
   background-repeat: no-repeat;
