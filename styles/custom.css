@@ -22,7 +22,7 @@ h3 { /*used as a title in projects page*/
   clear: both;
   font-size: 200%;
   line-height: 100%;
-  margin: 15% 0 1.5% 0;
+  margin: 9% 0 1.5% 0;
 }
 h4 {
   clear: both;
@@ -67,7 +67,7 @@ a:focus {
   height: 5%;
 }
 .s-project-2 {
-  height: 13%;
+  height: 6%;
 }
 .s-project-3 {
   height: 13%;
@@ -129,7 +129,7 @@ span.title {
   left: 0;
   right: 0;
   box-sizing: border-box;
-  font-size: 145%;
+  font-size: 130%;
   line-height: 100%;
   font-weight: 600;
 }
@@ -398,7 +398,7 @@ a.title-1 {
   width: 11%;
   height: 1%;
   transform: rotate(90deg);
-  border-bottom: 0.2rem solid black;
+  border-bottom: 0.1rem solid black;
 }
 .vertical-line.bottom {
   top: auto !important;
@@ -408,7 +408,7 @@ a.title-1 {
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  border-bottom: 0.2rem solid black;
+  border-bottom: 0.1rem solid black;
   box-sizing: border-box;
 }
 .project-image {
@@ -547,6 +547,13 @@ p.we-paragraph {
 .back-button-2 {
   clear: none;
   margin-left: 0;
+  display: none;
+}
+.page-back-box:hover + .back-button-2 {
+  display: block !important;
+}
+.back-button-2:hover {
+  display: block !important;
 }
 p.project-description {
   background-color: #eaeaea;
@@ -595,10 +602,10 @@ p.project-description {
     border-bottom: 0.1rem solid black !important;
   }
   .databox-break-table {
-    border-bottom: 0.1rem solid black !important;
+    border-bottom: 0.01rem solid black !important;
   }
   .vertical-line {
-    border-bottom: 0.1rem solid black !important;
+    border-bottom: 0.01rem solid black !important;
   }
   .project-spacing-right {
     margin-right: 0 !important;
@@ -623,6 +630,15 @@ p.project-description {
   }
   .show-map-button {
     width: 0.1em !important;
+  }
+  .box {
+    font-size: 110%;
+  }
+  .special-1 {
+    font-size: 120% !important;
+  }
+  .back-button-2 {
+    display: block !important;
   }
 }
 .project-databox {
@@ -671,7 +687,7 @@ p.project-description {
 .carousel-custom {
   width: 100%;
   margin-bottom: 2%;
-  background-color: black;
+  background-color: white;
 }
 .carousel-inner {
   height: 100%;
@@ -691,6 +707,12 @@ p.project-description {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
 }
+.carousel-arrow-black .carousel-control-prev .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e") !important;
+}
+.carousel-arrow-black .carousel-control-next .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e") !important;
+}
 .map-row {
   height: 50vh;
   margin-top: -7%;
@@ -705,15 +727,12 @@ p.project-description {
   height: 100% !important;
 }
 .show-map-button {
-  background-image: url("../images/other/arrow_down.svg");
-  height: 0.5em;
-  width: 0.5em;
-  padding-left: 0%;
-  background-color: transparent;
-  border: none;
-  background-repeat: no-repeat;
-  margin-left: 28%;
-  box-sizing: content-box;
+  display: contents;
+}
+.show-map-image {
+  width: 0.7em;
+  height: auto;
+  margin-left: 37%;
 }
 .show-map-button:hover {
   cursor: pointer;

@@ -43,7 +43,7 @@ function alignTheText() {
   if (screenWidth < 576) {
     textLocation.style.left = "50%";
     textLocation.style.transform = "translateX(-50%)";
-    textLocation.style.fontSize = "900%";
+    textLocation.style.fontSize = "800%";
   }
   else {
     textLocation.style.left = null;
