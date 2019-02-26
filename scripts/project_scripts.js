@@ -14,3 +14,16 @@ function hideMap() {
     button.style.transform = "none";
   }
 }
+
+function showMoreText() {
+  let hiddenText = document.querySelector(".project-read-more");
+  let button = document.querySelector(".read-more-button");
+  if (getComputedStyle(hiddenText).display == "none") {
+    hiddenText.style.display =  "inline";
+    button.innerHTML = "Read less";
+  }
+  else {
+    hiddenText.style.display =  null;
+    button.innerHTML = "Read more";
+  }
+}

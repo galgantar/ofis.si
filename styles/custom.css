@@ -20,9 +20,10 @@ h2 {
 }
 h3 { /*used as a title in projects page*/
   clear: both;
-  font-size: 200%;
+  font-size: 130%;
   line-height: 100%;
   margin: 9% 0 1.5% 0;
+  font-weight: 600;
 }
 h4 {
   clear: both;
@@ -67,7 +68,7 @@ a:focus {
   height: 5%;
 }
 .s-project-2 {
-  height: 6%;
+  height: 3%;
 }
 .s-project-3 {
   height: 13%;
@@ -180,7 +181,7 @@ span.title.we {
   display: table;
   height: 0;
   width: 100%;
-  border-bottom: 0.2rem solid black;
+  border-bottom: 0.1rem solid black;
   margin: 0;
   clear: both;
 }
@@ -555,11 +556,32 @@ p.we-paragraph {
 .back-button-2:hover {
   display: block !important;
 }
+.background-grey {
+  background-color: #eaeaea;
+}
 p.project-description {
   background-color: #eaeaea;
   line-height: 135%;
   font-size: 80%;
   padding: 3%;
+  margin: 0;
+}
+.project-read-more {
+  display: none;
+}
+.read-more-button {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2%;
+  color: inherit !important;
+  text-decoration: underline !important;
+  font-size: 80%;
+}
+.read-more-button:hover {
+  cursor: pointer;
 }
 .container {
   min-width: 0;
@@ -572,14 +594,6 @@ p.project-description {
 .col-12, .col-sm-6 {
   padding-left: 0;
   padding-right: 0;
-}
-.project-spacing-right {
-  margin-right: 2%;
-  margin-bottom: 0;
-}
-.project-spacing-left {
-  margin-left: 2%;
-  margin-bottom: 0;
 }
 @media (max-width: 576px) {
   .project-databox {
@@ -597,9 +611,10 @@ p.project-description {
     top: 50% !important;
     left: 34% !important;
     width: 10% !important;
+    border-bottom: 0.01rem solid black !important;
   }
   .break {
-    border-bottom: 0.1rem solid black !important;
+    border-bottom: 0.01rem solid black !important;
   }
   .databox-break-table {
     border-bottom: 0.01rem solid black !important;
@@ -614,7 +629,7 @@ p.project-description {
     margin-left: 0 !important;
   }
   .project-spacing-bottom {
-    margin-bottom: 8%;
+    margin-bottom: 8% !important;
   }
   .quick-facts {
     font-size: 150%;
@@ -639,6 +654,9 @@ p.project-description {
   }
   .back-button-2 {
     display: block !important;
+  }
+  .break-table {
+    border-bottom: 0.01rem solid black;
   }
 }
 .project-databox {
@@ -729,10 +747,14 @@ p.project-description {
 .show-map-button {
   display: contents;
 }
+.map-button-text {
+  font-weight: 400;
+  margin-left: 19%;
+}
 .show-map-image {
   width: 0.7em;
   height: auto;
-  margin-left: 37%;
+  margin-left: 3%;
 }
 .show-map-button:hover {
   cursor: pointer;
@@ -758,6 +780,7 @@ p.project-description {
   height: 7px;
   width: 7px;
   border-radius: 100%;
+  background-color: #ccc;
 }
 .image-link {
   display: contents;
