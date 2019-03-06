@@ -22,7 +22,7 @@ h3 { /*used as a title in projects page*/
   clear: both;
   font-size: 130%;
   line-height: 100%;
-  margin: 9% 0 1.5% 0;
+  margin: 9% 0 2% 0;
   font-weight: 600;
 }
 h4 {
@@ -68,7 +68,7 @@ a:focus {
   height: 5%;
 }
 .s-project-2 {
-  height: 3%;
+  height: 4%;
 }
 .s-project-3 {
   height: 13%;
@@ -101,7 +101,7 @@ a:focus {
   display: block;
   width: 100%;
   padding-top: 100%;
-  border: 0.07em solid black;
+  border: 1.7px solid black;
   text-align: center;
   position: relative;
   left: 0;
@@ -159,7 +159,7 @@ span.type {
 }
 .news-image {
   width: 100%;
-  margin: 12% 0 4% 0;
+  margin: 4% 0 6% 0;
 }
 .news-image-small {
   float: left;
@@ -232,7 +232,7 @@ span.title.we {
   width: 20%;
   padding-top: 20%;
   position: relative;
-  border: 0.15em solid black;
+  border: 2px solid black;
   text-align: center;
   float: left;
   margin-top: 2.2%;
@@ -573,6 +573,7 @@ p.project-description {
   color: inherit !important;
   text-decoration: underline !important;
   font-size: 80%;
+  font-weight: 600;
 }
 .read-more-button:hover {
   cursor: pointer;
@@ -645,12 +646,16 @@ p.project-description {
   }
   .box {
     font-size: 110%;
+    border: 1px solid black;
   }
   .special-font-size-1 {
     font-size: 120% !important;
   }
   .break-table {
     border-bottom: 0.01rem solid black;
+  }
+  .page-box {
+    border: 1px solid black;
   }
 }
 .project-databox {
@@ -698,12 +703,12 @@ p.project-description {
 }
 .carousel-custom {
   width: 100%;
-  margin-bottom: 2%;
   background-color: white;
 }
 .carousel-inner {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 .carousel-item {
   width: 100%;
@@ -712,8 +717,7 @@ p.project-description {
 }
 .carousel-image-custom {
   display: block;
-  max-height: 100%;
-  max-width: 100%;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -809,7 +813,8 @@ p.project-description {
   transform: translateX(-50%);
   margin-top: 4%;
   color: black;
-  font-size: 100%;
+  font-size: 80%;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
 }
