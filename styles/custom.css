@@ -101,7 +101,7 @@ a:focus {
   display: block;
   width: 100%;
   padding-top: 100%;
-  border: 1.7px solid black;
+  border: 1pt solid black;
   text-align: center;
   position: relative;
   left: 0;
@@ -109,6 +109,8 @@ a:focus {
   color: black;
   text-decoration: none;
   font-size: 100%;
+  transition-duration: 0.7s;
+  transition-property: background-color, color;
 }
 a.box:hover {
   background-color: black;
@@ -335,6 +337,7 @@ a.title-1 {
   font-family: none;
 }
 .page-button-description {
+  display: block;
   position: absolute;
   top: 69%;
   left: 0;
@@ -423,7 +426,10 @@ a.title-1 {
   margin: 0;
   display: block;
 }
-
+.news-section {
+  padding: 0;
+  margin: 0;
+}
 .page-box.we {
   background-color: black !important;
 }
@@ -572,7 +578,7 @@ p.project-description {
   margin-bottom: 2%;
   color: inherit !important;
   text-decoration: underline !important;
-  font-size: 80%;
+  font-size: 70%;
   font-weight: 600;
 }
 .read-more-button:hover {
@@ -609,7 +615,7 @@ p.project-description {
     border-bottom: 0.01rem solid black !important;
   }
   .break {
-    border-bottom: 0.1rem solid black !important;
+    border-bottom: 0.01rem solid black !important;
   }
   .publication-break {
     border-bottom: 0.01rem solid black !important;
@@ -638,15 +644,12 @@ p.project-description {
   .news-description-parent {
     font-size: 150%;
   }
-  .news-small {
-    font-size: 100% !important;
-  }
   .show-map-button {
     width: 0.1em !important;
   }
   .box {
     font-size: 110%;
-    border: 1px solid black;
+    border: 0.7px solid black;
   }
   .special-font-size-1 {
     font-size: 120% !important;
@@ -656,6 +659,23 @@ p.project-description {
   }
   .page-box {
     border: 1px solid black;
+  }
+  #show-more {
+    font-size: 120% !important;
+  }
+  .back-button {
+    font-size: 600% !important;
+    top: -23%;
+  }
+  .page-button-description {
+    font-size: 90% !important;
+    top: 73% !important;
+  }
+  .anchor-title {
+    font-size: 130% !important;
+  }
+  h3 {
+    font-size: 160%;
   }
 }
 .project-databox {
@@ -723,11 +743,14 @@ p.project-description {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
 }
-.carousel-arrow-black .carousel-control-prev .carousel-control-prev-icon {
+.carousel-black .carousel-control-prev .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e") !important;
 }
-.carousel-arrow-black .carousel-control-next .carousel-control-next-icon {
+.carousel-black .carousel-control-next .carousel-control-next-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e") !important;
+}
+.carousel-black .carousel-indicators li{
+  background-color: #999 !important;
 }
 .map-row {
   height: 50vh;
@@ -751,7 +774,7 @@ p.project-description {
 .show-map-image {
   width: 0.7em;
   height: auto;
-  margin-left: 3%;
+  margin-left: 10px;
 }
 .show-map-button:hover {
   cursor: pointer;
@@ -777,25 +800,13 @@ p.project-description {
   height: 7px;
   width: 7px;
   border-radius: 100%;
-  background-color: #ccc;
+  background-color: #ddd;
 }
 .image-link {
   display: contents;
 }
-.news-small-section {
-  width: 100%;
-  overflow: auto;
-  display: inherit;
-}
-.news-small {
-  width: 100%;
-  font-size: 70%;
-}
 .float-r {
   float: right;
-}
-.news-small-description {
-  width: 50%;
 }
 .archive-back-box {
   margin-left: 5%;
@@ -813,7 +824,7 @@ p.project-description {
   transform: translateX(-50%);
   margin-top: 4%;
   color: black;
-  font-size: 80%;
+  font-size: 100%;
   font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
