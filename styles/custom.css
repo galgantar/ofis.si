@@ -661,7 +661,7 @@ p.project-description {
     border: 1px solid black;
   }
   #show-more {
-    font-size: 120% !important;
+    font-size: 150% !important;
   }
   .back-button {
     font-size: 600% !important;
@@ -828,4 +828,7 @@ p.project-description {
   font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
+}
+.bold:hover {
+  color: #824747
 }

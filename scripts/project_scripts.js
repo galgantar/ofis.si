@@ -16,14 +16,18 @@ function hideMap() {
 }
 
 function showMoreText() {
-  let hiddenText = document.querySelector(".project-read-more");
+  let hiddenTexts = document.querySelectorAll(".project-read-more");
   let button = document.querySelector(".read-more-button");
-  if (getComputedStyle(hiddenText).display == "none") {
-    hiddenText.style.display =  "inline";
+  if (getComputedStyle(hiddenTexts[0]).display == "none") {
     button.innerHTML = "Read less";
+    hiddenTexts.forEach(function(element){
+      element.style.display =  "inline";
+    });
   }
   else {
-    hiddenText.style.display =  null;
     button.innerHTML = "Read more";
+    hiddenTexts.forEach(function(element){
+      element.style.display =  null;
+    })
   }
 }
