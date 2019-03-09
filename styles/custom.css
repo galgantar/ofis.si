@@ -82,6 +82,9 @@ a:focus {
 .s-archive-1 {
   height: 5%;
 }
+.s-house-1 {
+  height: 0;
+}
 .index-table {
   width: 100%;
   table-layout: fixed;
@@ -720,6 +723,8 @@ p.project-description {
   left: 44%;
   font-weight: 700;
   margin-left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .carousel-custom {
   width: 100%;
@@ -831,4 +836,7 @@ p.project-description {
 }
 .bold:hover {
   color: #824747
+}
+.title-housing {
+  font-size: 170% !important;
 }
