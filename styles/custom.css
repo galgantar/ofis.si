@@ -294,6 +294,7 @@ a.anchor-title {
   font-weight: 400;
   color: black;
   line-height: 200%;
+  display: block;
 }
 a.anchor-project {
   color: black;
