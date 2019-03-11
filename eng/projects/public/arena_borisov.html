@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Icon-->
+    <link rel="shortcut icon" href="../../../images/other/favicon.ico">
+
+    <title>Arena borisov</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!--Mapbox-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <script src="../../../scripts/main_scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../styles/custom.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Gal Gantar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <img class="project-fullscreen-image" src="../../../images/projects/housing/basket_apartments/slika_v_izdelavi.png">
+    <div class="wrapper">
+      <div class="spacer s-project-1"></div>
+      <div class="page-box">
+        <span class="page-title">PUBLIC</span>
+        <span class="page-type">projects</span>
+      </div>
+      <a class="page-back-box" href="../../public.html">
+        <span class="back-button"><</span>
+        <span class="page-button-description">back</span>
+      </a>
+      <h1>ARENA BORISOV</h1>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="container">
+        <div class="row quick-facts">
+          <div class="col-12 col-sm-6">
+            <div class="project-databox">
+              <span class="project-datatype">location</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field">Borisov, Belarus</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">&nbsp</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field"><span class="map-button-text">map</span><a class="show-map-button" onclick="hideMap();"><img class="show-map-image" src="../../../images/other/arrow_down.svg"></a></span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">area</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">132 000m²</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">year</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">2009 - 2014</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <table class="break-table removing-break"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">program</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">public/sport</span>
+            </div>
+              <div class="project-databox">
+              <span class="project-datatype">client</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">FC bate</span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+              <div class="project-databox">
+              <span class="project-datatype">type</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">commission</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">status</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">built</span>
+            </div>
+          </div>
+        </div>
+        <div class="row map-row">
+          <div class="col-12">
+            <div class="maphost">
+              <div id='map'></div>
+            </div>
+            <script>
+              mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FsZyIsImEiOiJjanJmNW9hNHIxYm1tM3ltcjI2aXU0MDIzIn0.7pycMDkcQIe7rzpcCJId9g';
+              const map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/galg/cjry55l6o16ab1fp312uf8hyi',
+              center: [15.150,46.069],
+              zoom: 6.5
+              });
+
+              map.on('click', function(e) {
+                var features = map.queryRenderedFeatures(e.point, {
+                  layers: ['ofis-projects']
+                });
+
+                if (!features.length) {
+                  return;
+                }
+
+                var feature = features[0];
+
+                var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                  .setLngLat(feature.geometry.coordinates)
+                  .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+                  .setLngLat(feature.geometry.coordinates)
+                  .addTo(map);
+              });
+            </script>
+          </div>
+        </div>
+        <div class="row project-description-row">
+          <div class="col-12 col-sm-6 background-grey project-spacing-bottom">
+            <p class="project-description">
+              The concept takes into account the natural advantages of the location and the existing interventions within the terrain, while maintaining as many of the existing trees on site as possible. Besides 13.000 seats there is additional 3.000 m2 of public space and are classified 4 stars according to UEFA categorization. Traffic and parking is organised between the forest.<br>
+              <br>
+              The arena forms a unified rounded dome, giving the impression of a single enclosed object.<br>
+              The Skin of the dome gives an impression of a fragile stretched perforated textile pulled over the stadium skeleton. The covered space between the skin and the tribunes is a public street-a vestibule with public program (shops, bars, services, toilets) and galleries above (offices, VIP, press)<br>
+              <span class="project-read-more"><br>
+              Internally, the rounded arena provides good acoustics and encourages an extrovert atmosphere from the players and the fans alike during the game, but focuses concentration during training time. The playing surface has N-S orientation, with a total area of 85x105 m, on which 68x105m is used for playing. The remaining area allows enough space for the installation of advertising screens, photographers and cameras. The seats are arranged around the playing field in rows of 17 along the sides and rows of 27-28 along the short sides. The upper west gallery is reserved for press cabins, with seats and tables for 40 journalists and direct stair access to the press room and mix zone. In the east are the VIP stands, with 250 seats and bar and entertainment spaces. The VIP is accessed directly via an elevator from the entrance area with a car driveway. The athletes have a separate access on the lower platform, with passage to team buses and parking. At each entry point to the field are two dressing rooms, mix zone, physiotherapy and a space for doping control.<br>
+              There are 4 floors with extra program and service facilities under the west stand area and 3 floors under the east side. The foyer for visitors is located on the first floor level and has 4 stairway access points. It is a covered plateau, naturally ventilated and unheated. Extending all around the inner stadium arena, this space contains the visitor's toilets, bars, first-aid room and detention: it is a place to break during half-time. 3.000 m2 of public program is distributed at ground level on the north, south and east ends of the structure. In the east, a restaurant and bowling area are located. The restaurant prepares meals for the VIP during the match, with a service elevator for catering to the VIP lounge and bar within its public foyer. In the south, there are public fitness/gym studios. Other public area spaces are designed for various commercial activities. All restaurants have access from the public platform. Around the platform is a rounded pedestrian square, as a peripheral roundabout and meeting area. Parking pockets are organized into the existing forest area.
+              </span>
+            </p>
+            <a class="read-more-button" onclick="showMoreText();">Read more</a>
+          </div>
+          <div class="col-12 col-sm-6 background-grey">
+            <p class="project-description">
+              <b>location:</b><br>
+              Borisov, Belarus<br>
+              <br>
+              <b>status:</b><br>
+              commission 2010<br>
+              construction 2011<br>
+              completion 2014<br>
+              <br>
+              <b>program:</b><br>
+              football stadium + public program<br>
+              <br>
+              <b>type</b><br>
+              public + private<br>
+              <br>
+              <b>client:</b><br>
+              FC Bate<br>
+              County of Borisov<br>
+              <span class="project-read-more"><br>
+              <b>Engineering and local office:</b><br>
+              Magnus Group<br>
+              <br>
+              <b>capacity:</b><br>
+              audience 13.000 seats, VIP 620 seats, press seats 100, parking spaces 800<br>
+              <br>
+              <b>structure:</b><br>
+              steel, reinforced concrete; roof structure- metal beams with aluminium cladding<br>
+              <br>
+              <b>project leaders:</b><br>
+              Rok Oman, Spela Videcnik<br>
+              <br>
+              <b>project team:</b><br>
+              Janez Martincic, Rok Gerbec, Andrej Gregoric, Janja Del Linz,<br>
+              Katja Aljaz, Ana Kosi, Ieva Cicenaite, Grzegorz Ostrowski, Filip Knapczyk, Sergio Silva Santos<br>
+              <br>
+              <b>collaborators:</b><br>
+              Lorna Jackson, Patrycja Majewska, Rita Dolmany, Dusan Chobor,<br>
+              Darko Ivanovski, Alex Manecan, Catalina Severin,  Michele Albonetti<br>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>photo@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel1" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="carousel-image-custom" src="../../../images/projects/housing/basket_apartments/slika_v_izdelavi.png" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel2" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="carousel-image-custom" src="../../../images/projects/housing/basket_apartments/slika_v_izdelavi.png" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h3>video@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div class="iframe-container" style="padding-top: 57%">
+        <iframe class="responsive-iframe" src="https://player.vimeo.com/video/51072373" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+
+      <h3>concept</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel3" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel3" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="carousel-image-custom" src="../../../images/projects/housing/basket_apartments/slika_v_izdelavi.png" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h3>plans</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel4" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel4" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="carousel-image-custom" src="../../../images/projects/housing/basket_apartments/slika_v_izdelavi.png" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel4" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h3>related media...</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="publication width-full">
+        <div class="publication-name publicaton-name-main">
+          <a class="description bold width-100" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description width-100">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="spacer s-project-3"></div>
+    </div>
+    <script src="../../../scripts/project_scripts.js"></script>
+    <script src="../../../scripts/adjust_carousel.js"></script>
+  </body>
+</html>
