@@ -13,7 +13,7 @@ function checkFontSize() {
   catch(error) {}
 }
 function getTheValues() {
-  imageLocation = document.body.querySelector("#main-image");
+  imageLocation = document.body.querySelector("#background");
   textLocation = document.body.querySelector("#links");
   logoLocation = document.body.querySelector("#logo-image");
 
@@ -34,22 +34,9 @@ function insertRandomImage(isMobile) {
     textColor = landscapeImages[landscapeKeys[index]];
   }
 
-  imageLocation.setAttribute("src", "images/index/" + randomPhotoLocation);
+  imageLocation.style.backgroundImage = 'url("images/index/'+ randomPhotoLocation + '")';
   logoLocation.setAttribute("src", "images/index/logo/" + textColor + ".png");
   textLocation.style.color = textColor;
-}
-function alignTheText() {
-  screenWidth = screen.width;
-  if (screenWidth < 576) {
-    textLocation.style.left = "50%";
-    textLocation.style.transform = "translateX(-50%)";
-    textLocation.style.fontSize = "800%";
-  }
-  else {
-    textLocation.style.left = null;
-    textLocation.style.transform = null;
-    textLocation.style.fontSize = null;
-  }
 }
 setInterval (function() {
   if (typeof wasMobile === 'undefined') {
@@ -75,6 +62,5 @@ setInterval (function() {
     wasMobile = false;
   }
 
-  alignTheText();
   checkFontSize();
 }, 10)
