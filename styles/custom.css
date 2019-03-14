@@ -164,12 +164,17 @@ span.type {
 }
 .news-image {
   width: 100%;
-  margin: 4% 0 6% 0;
+  margin: 10% 0 3% 0;
 }
-.news-image-small {
-  float: left;
-  width: 49%;
-  margin: 12% 0 4% 0;
+.news-title-link {
+  display: contents;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+.news-title-link:hover {
+  color: #824747;
+  text-decoration: underline;
 }
 a.box.we {
   background-color: black;
@@ -215,6 +220,8 @@ span.title.we {
   line-height: 100%;
   font-weight: 400;
   margin: 1.5% 0;
+  font-size: 95%;
+  font-family: arial;
 }
 .description {
   display: block;
@@ -231,6 +238,7 @@ span.title.we {
 .des-title {
   font-weight: bold;
   font-size: 100%;
+  font-family: verdana;
 }
 .page-box {
   display: table-cell;
@@ -668,8 +676,8 @@ p.project-description {
     font-size: 150% !important;
   }
   .back-button {
-    font-size: 600% !important;
-    top: -23%;
+    font-size: 550% !important;
+    top: -19%;
   }
   .page-button-description {
     font-size: 90% !important;
@@ -801,6 +809,13 @@ p.project-description {
 }
 .project-desc-box {
   width: 50%;
+}
+.carousel {
+  overflow: hidden;
+}
+.carousel-indicators {
+  margin-left: -100% !important; /*very large number to provide space on each side to prevent carousel indicators from resizing*/
+  margin-right: -100% !important;
 }
 .carousel-indicators li {
   height: 7px;
