@@ -7,6 +7,7 @@ body {
   margin: 0;
   height: inherit;
   width: inherit;
+  text-align: center;
 }
 h1 {
   margin: 15% 0 1% 0;
@@ -41,6 +42,7 @@ a:focus {
   max-width: 850px;
   margin: 0 auto;
   font-size: 100%;
+  text-align: left;
 }
 .ninja {
   visibility: hidden;
@@ -567,6 +569,7 @@ p.we-paragraph {
 }
 .project-fullscreen-image {
   width: 100%;
+  max-width: 2000px;
 }
 .background-grey {
   background-color: #eaeaea;
