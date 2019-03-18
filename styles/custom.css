@@ -360,6 +360,17 @@ a.title-1 {
   color: black !important;
   font-size: 75%;
 }
+.back-button-2 {
+  clear: none;
+  margin-left: 0;
+  display: none;
+}
+.page-back-box:hover + .back-button-2 {
+  display: block !important;
+}
+.back-button-2:hover {
+  display: block !important;
+}
 .project-box {
   margin: 8% 0 2% 0;
 }
@@ -396,10 +407,11 @@ a.title-1 {
   margin: 13.3% 0;
 }
 .box-left {
-  width: 60%;
+  width: 52%;
 }
 .box-right {
-  width: 40%;
+  width: 42%;
+  margin-left: 6%;
 }
 .data-box-datatype {
   font-size: 81%;
@@ -691,6 +703,10 @@ p.project-description {
   }
   h3 {
     font-size: 160%;
+  }
+  .back-button-2 {
+    display: block !important;
+    margin-left: 2% !important;
   }
 }
 .project-databox {
