@@ -349,6 +349,7 @@ a.title-1 {
   left: 0;
   right: 0;
   font-family: none;
+  z-index: 5;
 }
 .page-button-description {
   display: block;
@@ -364,12 +365,15 @@ a.title-1 {
   clear: none;
   margin-left: 0;
   display: none;
+  z-index: 1 !important;
 }
 .page-back-box:hover + .back-button-2 {
   display: block !important;
+  animation: slide .2s;
 }
 .back-button-2:hover {
   display: block !important;
+  opacity: 1 !important;
 }
 .project-box {
   margin: 8% 0 2% 0;
@@ -894,4 +898,16 @@ p.project-description {
 }
 .size-research {
   font-size: 160% !important;
+}
+@keyframes slide{
+  from {
+    margin-left: -7%;
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
