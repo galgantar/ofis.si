@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Icon-->
+    <link rel="shortcut icon" href="../../../images/other/favicon.ico">
+
+    <title>Prague national library</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!--Mapbox-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <script src="../../../scripts/main_scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../styles/custom.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Gal Gantar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <img class="project-fullscreen-image" src="../../../images/projects/culture/prague_national_library/Praga-library-competition_V.jpg">
+    <div class="wrapper">
+      <div class="spacer s-project-1"></div>
+      <div class="page-box">
+        <span class="page-title size-culture">CULTURE</span>
+        <span class="page-type">projects</span>
+      </div>
+      <a class="page-back-box" href="../../culture.html">
+        <span class="back-button"><</span>
+        <span class="page-button-description">back</span>
+      </a>
+      <a class="page-back-box back-button-2" href="../../home.html">
+        <span class="back-button">></span>
+        <span class="page-button-description">main</span>
+      </a>
+      <h1>PRAGUE NATIONAL LIBRARY</h1>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="container">
+        <div class="row quick-facts">
+          <div class="col-12 col-sm-6">
+            <div class="project-databox">
+              <span class="project-datatype">location</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field">Prague, CR</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">&nbsp</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field"><span class="map-button-text">map</span><a class="show-map-button" onclick="hideMap();"><img class="show-map-image" src="../../../images/other/arrow_down.svg"></a></span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">area</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">40.000m²</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">year</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">2003</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <table class="break-table removing-break"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">program</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">library</span>
+            </div>
+              <div class="project-databox">
+              <span class="project-datatype">client</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">City of Prague</span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+              <div class="project-databox">
+              <span class="project-datatype">type</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">competition</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">status</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">-</span>
+            </div>
+          </div>
+        </div>
+        <div class="row map-row">
+          <div class="col-12">
+            <div class="maphost">
+              <div id='map'></div>
+            </div>
+            <script>
+              mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FsZyIsImEiOiJjanJmNW9hNHIxYm1tM3ltcjI2aXU0MDIzIn0.7pycMDkcQIe7rzpcCJId9g';
+              const map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/galg/cjry55l6o16ab1fp312uf8hyi',
+              center: [15.150,46.069],
+              zoom: 6.5
+              });
+
+              map.on('click', function(e) {
+                var features = map.queryRenderedFeatures(e.point, {
+                  layers: ['ofis-projects']
+                });
+
+                if (!features.length) {
+                  return;
+                }
+
+                var feature = features[0];
+
+                var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                  .setLngLat(feature.geometry.coordinates)
+                  .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+                  .setLngLat(feature.geometry.coordinates)
+                  .addTo(map);
+              });
+            </script>
+          </div>
+        </div>
+        <div class="row project-description-row">
+          <div class="col-12 col-sm-6 background-grey project-spacing-bottom">
+            <p class="project-description">
+              The library project is located within the boundaries of the site area. From the ground, green “pillows” are organized as landscape mounds that isolate the interior program from the street and create external amphitheaters where activities such as reading, concerts, etc. can take place. The pillows support four programmatic cylinders, which wrapped together form a cloud with bays of exterior spaces.
+              <span class="project-read-more"><br><br>
+              The building is organized in four circular towers with an envelope containing lobbies and connections. The four towers are programmed within stacks, reading rooms, offices, and public (cafe + bookshop). The core of each tower, its basic supporting structure, acts as a light tube bringing natural light to the interior spaces. Each tower is designed with its own organizational logic, connections, and an external facade derived from its function. Where programs overlap, the towers are connected with an internal envelope. Each tower has four floors except the main tower, where book stacks are located. This dominating cylinder acts as a core of the building and symbolically shows the heart of the library. An extended terrace with a restaurant takes place on top of the building.
+              <br><br>
+              The four towers are also the structural elements of the building. Each cylinder acts as a structural frame that supports vertical and horizontal loads. With diagonal elements all around the main cylinder, it acts as a space frame, a very stable construction. For additional stability, the walls of the technical maintenance spaces are load-bearing concrete walls. The horizontal constructions between each floor are composite slabs. Steel girders and concrete slabs make an effective and economic construction in combination with the main vertical construction.
+              </span>
+            </p>
+            <a class="read-more-button" onclick="showMoreText();">Read more</a>
+          </div>
+          <div class="col-12 col-sm-6 background-grey">
+            <p class="project-description">
+              <b>project team:</b><br>
+              Rok Oman, Spela Videcnik<br>
+              Vesna Pungercar, Nejc Batistic, Martina Lipicer, Andrej Gregoric<br>
+              <br>
+              <b>technical team:</b><br>
+              structural engineering: Projecta d.o.o.<br>
+              mechanical, electrical engineering & sustainability: ISP d.o.o.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>photo@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel1" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_01.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_02.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_03.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_04.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_05.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_06.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_07.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_08.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_09.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_10.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_11.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/02_SLIDER_LANDSCAPE/OFIS_PRAGUE_NATIONAL_LIBRARY_L_12.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="spacer s-project-2"></div>
+
+      <!--<h3>video@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div class="iframe-container" style="padding-top: 57%">
+        <iframe class="responsive-iframe" src="https://player.vimeo.com/video/51072373" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>-->
+
+      <h3>concept</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel3" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/03_SLIDER-CONCEPT/OFIS_PRAGUE_NATIONAL_LIBRARY_CONCEPT_04.JPG" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h3>plans</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel4" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/04_SLIDER-PLANS/OFIS_PRAGUE_NATIONAL_LIBRARY_PLANS_FLOORPLANS_01.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/culture/prague_national_library/04_SLIDER-PLANS/page_2.JPG" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel4" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <!--<h3>related media...</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="publication width-full">
+        <div class="publication-name publicaton-name-main">
+          <a class="description bold width-100" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description width-100">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>-->
+      <div class="spacer s-project-3"></div>
+    </div>
+    <script src="../../../scripts/project_scripts.js"></script>
+    <script src="../../../scripts/adjust_carousel.js"></script>
+    <script src="../../../scripts/add_carousel_indicators.js"></script>
+  </body>
+</html>

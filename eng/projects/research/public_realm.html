@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Icon-->
+    <link rel="shortcut icon" href="../../../images/other/favicon.ico">
+
+    <title>Public realm</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!--Mapbox-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <script src="../../../scripts/main_scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../styles/custom.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Gal Gantar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <img class="project-fullscreen-image" src="../../../images/projects/research/public_realm/Studio report cover templates_V.jpg">
+    <div class="wrapper">
+      <div class="spacer s-project-1"></div>
+      <div class="page-box">
+        <span class="page-title size-research">RESEARCH</span>
+        <span class="page-type">projects</span>
+      </div>
+      <a class="page-back-box" href="../../research.html">
+        <span class="back-button"><</span>
+        <span class="page-button-description">back</span>
+      </a>
+      <a class="page-back-box back-button-2" href="../../home.html">
+        <span class="back-button">></span>
+        <span class="page-button-description">main</span>
+      </a>
+      <h1>THE PUBLIC REALM</h1>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="container">
+        <div class="row quick-facts">
+          <div class="col-12 col-sm-6">
+            <div class="project-databox">
+              <span class="project-datatype">location</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field">Kuala Lumpur</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">&nbsp</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field"><span class="map-button-text">map</span><a class="show-map-button" onclick="hideMap();"><img class="show-map-image" src="../../../images/other/arrow_down.svg"></a></span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">area</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">-</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">year</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">2016</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <table class="break-table removing-break"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">program</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">-</span>
+            </div>
+              <div class="project-databox">
+              <span class="project-datatype">client</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">-</span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+              <div class="project-databox">
+              <span class="project-datatype">type</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">research</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">status</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">-</span>
+            </div>
+          </div>
+        </div>
+        <div class="row map-row">
+          <div class="col-12">
+            <div class="maphost">
+              <div id='map'></div>
+            </div>
+            <script>
+              mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FsZyIsImEiOiJjanJmNW9hNHIxYm1tM3ltcjI2aXU0MDIzIn0.7pycMDkcQIe7rzpcCJId9g';
+              const map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/galg/cjry55l6o16ab1fp312uf8hyi',
+              center: [15.150,46.069],
+              zoom: 6.5
+              });
+
+              map.on('click', function(e) {
+                var features = map.queryRenderedFeatures(e.point, {
+                  layers: ['ofis-projects']
+                });
+
+                if (!features.length) {
+                  return;
+                }
+
+                var feature = features[0];
+
+                var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                  .setLngLat(feature.geometry.coordinates)
+                  .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+                  .setLngLat(feature.geometry.coordinates)
+                  .addTo(map);
+              });
+            </script>
+          </div>
+        </div>
+        <div class="row project-description-row">
+          <div class="col-12 col-sm-6 background-grey project-spacing-bottom">
+            <p class="project-description">
+              Kuala Lumpur, Malaysia’s capital, is an
+              extraordinary city informed by multiple
+              cultures. Largely comprised of Bumiputera
+              (Malay) and Chinese inhabitants, the
+              diverse constituency likewise includes
+              Indians and subpopulations of East
+              Malaysia. Religious affiliations include
+              Muslim, Buddhist, Hindu, Christian, and
+              Taoist. The city’s landscape is shaped by
+              this conglomeration and more. The option
+              studio “Kuala Lumpur: Designing the Public
+              Realm” focused on a complex area that
+              contains the business district of Kuala
+              Lumpur City Centre, part of the channelized
+              Klang River trapped between a highway
+              and a historic Muslim cemetery, and the
+              traditional Malay enclave of Kampung
+              Baru. The site, which extends a diameter of
+              1.5 kilometers, serves as an illustration of
+              the city’s complex ethnic and social fabric
+              and the pressures of rapid development in
+              Southeast Asia.
+            </p>
+          </div>
+          <div class="col-12 col-sm-6 background-grey">
+            <p class="project-description">
+              <b>Architects: OFIS arhitekti</b>
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>photo@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel1" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_01.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_02.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_03.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_04.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_05.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_06.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_07.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_08.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_09.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_10.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_11.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_12.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_13.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_14.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_15.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_16.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_17.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_18.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_19.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_20.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_21.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_22.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_23.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_24.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_25.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_26.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_27.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_28.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_29.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_30.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_31.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_32.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_33.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_34.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_35.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_36.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_37.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_38.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_39.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_40.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_41.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_42.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_43.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_44.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_45.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_46.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_47.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_48.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_49.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_50.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_51.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_52.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_53.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/02_SLIDER_LANDSCAPE/OFIS_HARVARD-GSD-Kuala-Lumpur_54.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel2" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_1.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_2.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_3.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_4.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_5.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_6.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_7.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_8.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/03_SLIDER_CRTA/OFIS_GSD_Kuala-Lumpur-Designing-the-Public-Realm_9.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <!--<h3>video@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div class="iframe-container" style="padding-top: 57%">
+        <iframe class="responsive-iframe" src="https://player.vimeo.com/video/202721366" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>-->
+
+      <h3>concept</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel3" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur Designing the Public Realm_draft_080917_Page_01.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur10.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur11.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur12.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur13.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur14.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur15.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur16.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur17.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur2.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur3.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur4.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur5.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur6.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur7.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur8.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/research/public_realm/01_SLIDER_LANDSCAPE_CONCEPT/Kuala Lumpur9.JPG" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <!--<h3>plans</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel4" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+        </div>
+        <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel4" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>-->
+      
+      <!--<h3>related media...</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="publication width-full">
+        <div class="publication-name publicaton-name-main">
+          <a class="description bold width-100" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description width-100">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>-->
+      <div class="spacer s-project-3"></div>
+    </div>
+    <script src="../../../scripts/project_scripts.js"></script>
+    <script src="../../../scripts/adjust_carousel.js"></script>
+    <script src="../../../scripts/add_carousel_indicators.js"></script>
+  </body>
+</html>

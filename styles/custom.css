@@ -87,6 +87,9 @@ a:focus {
 .s-house-1 {
   height: 0;
 }
+.s-culture-1 {
+  height: 0;
+}
 .index-table {
   width: 100%;
   table-layout: fixed;
@@ -910,4 +913,10 @@ p.project-description {
     opacity: 1;
     pointer-events: auto;
   }
+}
+.copyright {
+  font-size: 70%;
+}
+.size-culture {
+  font-size: 185% !important;
 }

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Icon-->
+    <link rel="shortcut icon" href="../../../images/other/favicon.ico">
+
+    <title>Alpine barn apartment</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!--Mapbox-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <script src="../../../scripts/main_scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../styles/custom.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Gal Gantar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <img class="project-fullscreen-image" src="../../../images/projects/house/alpine_barn_apartment/ALPINE BARN APARTMENT_OFIS_2015_FOTO-TOMAZ GREGORIC_6.jpg">
+    <div class="wrapper">
+      <div class="spacer s-project-1"></div>
+      <div class="page-box">
+        <span class="page-title">HOUSE</span>
+        <span class="page-type">projects</span>
+      </div>
+      <a class="page-back-box" href="../../house.html">
+        <span class="back-button"><</span>
+        <span class="page-button-description">back</span>
+      </a>
+      <a class="page-back-box back-button-2" href="../../home.html">
+        <span class="back-button">></span>
+        <span class="page-button-description">main</span>
+      </a>
+      <h1>ALPINE BARN APARTMENT</h1>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="container">
+        <div class="row quick-facts">
+          <div class="col-12 col-sm-6">
+            <div class="project-databox">
+              <span class="project-datatype">location</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field">Bohinj, Slovenia</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">&nbsp</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field"><span class="map-button-text">map</span><a class="show-map-button" onclick="hideMap();"><img class="show-map-image" src="../../../images/other/arrow_down.svg"></a></span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">area</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">120m²</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">year</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">2014 - 2015</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <table class="break-table removing-break"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">program</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">revitalisation</span>
+            </div>
+              <div class="project-databox">
+              <span class="project-datatype">client</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">private</span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+              <div class="project-databox">
+              <span class="project-datatype">type</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">apartment</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">status</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">built</span>
+            </div>
+          </div>
+        </div>
+        <div class="row map-row">
+          <div class="col-12">
+            <div class="maphost">
+              <div id='map'></div>
+            </div>
+            <script>
+              mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FsZyIsImEiOiJjanJmNW9hNHIxYm1tM3ltcjI2aXU0MDIzIn0.7pycMDkcQIe7rzpcCJId9g';
+              const map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/galg/cjry55l6o16ab1fp312uf8hyi',
+              center: [15.150,46.069],
+              zoom: 6.5
+              });
+
+              map.on('click', function(e) {
+                var features = map.queryRenderedFeatures(e.point, {
+                  layers: ['ofis-projects']
+                });
+
+                if (!features.length) {
+                  return;
+                }
+
+                var feature = features[0];
+
+                var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                  .setLngLat(feature.geometry.coordinates)
+                  .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+                  .setLngLat(feature.geometry.coordinates)
+                  .addTo(map);
+              });
+            </script>
+          </div>
+        </div>
+        <div class="row project-description-row">
+          <div class="col-12 col-sm-6 background-grey project-spacing-bottom">
+            <p class="project-description">
+              Traditional landmarks creating a Slovenian countryside also include different types of farmhouses, hayracks and barns. Unfortunately many of these no longer serve its purpose, therefore are mostly in poor condition, non-maintained and often simply destroyed and replaced with generic housing. Only by embracing the traditions that have been passed on to by their ancestors ensure that the Slovene vernacular architecture* survives not just as national symbol, but also an integral part of the Slovenian rural lifestyle.<br>
+              <i>*a category of architecture based on local needs, construction materials and reflecting local traditions</i><br>
+              <span class="project-read-more"><br>
+              <b>Old Barn Revitalization</b><br>
+              <br>
+              The concept converts old barn into a loft apartment by leaving the original exterior appearance intact in contrast with creating a new internal wooden shell.<br>
+              Originally, ground floor served as stable for stock and upper level for drying and storing hay and farm equipment.<br>
+              The existing ramp, which leads to the wooden deck above cattle area – is kept and serves as the main entrance to the new gallery apartment. The former external storage area next to the entrance is converted into the porch overlooking the Alps. All external wooden cladding and concrete roof slates are maintained, the only intervention are perforations into wooden parts behind internal windows and opening of the front porch.<br>
+              Along the main volume between each existing wooden structure line are positioned living area, dining and raised bedroom. The auxiliary spaces like wardrobe, bathrooms, sauna, fireplace and kitchen are packed inside the service box displaced on the side behind the wall created by vertical planks. Guest bedroom is created above the terrace, opened as a gallery towards the main living space.<br>
+              All internal shell (floors, walls, furniture) is made by deep-brushed local spruce.<br>
+              </span>
+            </p>
+            <a class="read-more-button" onclick="showMoreText();">Read more</a>
+          </div>
+          <div class="col-12 col-sm-6 background-grey">
+            <p class="project-description">
+              <b>Project team:</b><br>
+              Rok Oman, Spela Videcnik,<br>
+              Andrej Gregoric, Janez Martincic,<br>
+              Michele Albonetti, Maria Della Mea, Tomaž Cirkvencic, Pawel Nikkiel,<br>
+              Gözde Okyay, Roberta Costa,Maria Rosaria Ritonnaro, Ralea Toma Ioan Catalin,<br>
+              Grega Valencic, Vlad Popa, Tanja Veselic, Jade Manbodh<br>
+              <b>Technical team:</b><br>
+              Structural engineering: Projecta<br>
+              Mechanical engineering: MM-term<br>
+              Electrical engineering: ES<br>
+              Lighting: Arcadia lightwear<br>
+              General contractor: Permiz
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>photo@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel1" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_00.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_000.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_01.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_04.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_05.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_06.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_07.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_08.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_09.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_10.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_11.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_12.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_13.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_14.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_15.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_16.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_17.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_18.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_19.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/01_SLIDER_PORTRAIT/ALPINE BARN APARTMENT_OFIS_2015_@TOMAZ-GREGORIC_20.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel2" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_01.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_02.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_03.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_04.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_05.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_06.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_07.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_08.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_09.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_10.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_11.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_12.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_13.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_14.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_15.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_16.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_17.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_18.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_19.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_20.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_21.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_22.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_23.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_24.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_25.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_26.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_27.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_28.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_29.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/02_SLIDER_LANDSCAPE/ALPINE BARN APARTMENT_OFIS_FOTO-TOMAZ GREGORIC_L_30.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h3>video@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div class="iframe-container" style="padding-top: 57%">
+        <iframe class="responsive-iframe" src="https://player.vimeo.com/video/154190562" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+
+      <h3>concept</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel3" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/03_SLIDER_CONCEPT/0_REFERENCE_SLOVENE VERNACULAR_BARN_02-MIXED USE_01.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/03_SLIDER_CONCEPT/1_REFERENCE_SLOVENE VERNACULAR_BARN_02.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/03_SLIDER_CONCEPT/2.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/03_SLIDER_CONCEPT/DIAGRAM AXONOMETRIC VIEWS.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/03_SLIDER_CONCEPT/DIAGRAM FURNITURE.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/03_SLIDER_CONCEPT/DIAGRAM LEVELS.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/03_SLIDER_CONCEPT/DIAGRAM VOLUMES.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h3>plans</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel4" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_01.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_02.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_03.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_04.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_05.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_06.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_07.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_08.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_09.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_10.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_11.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/house/alpine_barn_apartment/04_SLIDER_PLANS/alpine-barn-apartment_plans_12.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel4" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <!--<h3>related media...</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="publication width-full">
+        <div class="publication-name publicaton-name-main">
+          <a class="description bold width-100" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description width-100">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>-->
+      <div class="spacer s-project-3"></div>
+    </div>
+    <script src="../../../scripts/project_scripts.js"></script>
+    <script src="../../../scripts/adjust_carousel.js"></script>
+    <script src="../../../scripts/add_carousel_indicators.js"></script>
+  </body>
+</html>
