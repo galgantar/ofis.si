@@ -169,7 +169,7 @@ span.type {
 }
 .news-image {
   width: 100%;
-  margin: 10% 0 3% 0;
+  margin-bottom: 3%;
 }
 .news-title-link {
   display: contents;
@@ -460,8 +460,8 @@ a.title-1 {
   display: block;
 }
 .news-section {
+  margin: 10% 0 0 0;
   padding: 0;
-  margin: 0;
 }
 .page-box.we {
   background-color: black !important;
@@ -714,6 +714,9 @@ p.project-description {
   .back-button-2 {
     display: block !important;
     margin-left: 2% !important;
+  }
+  .carousel-indicators li {
+    display: none;
   }
 }
 .project-databox {

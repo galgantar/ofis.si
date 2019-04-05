@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <!--Icon-->
     <link rel="shortcut icon" href="../images/other/favicon.ico">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
     <title>Ofis</title>
     <script src="../scripts/main_scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/custom.css">
     <meta charset="utf-8">
-    <meta name="author" content="Gal Gantar">
+    <meta name="author" content="Gal Gantar, gantar.gal@gmail.com">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -149,7 +155,36 @@
       </table>
       <h1>NEWS</h1>
       <table class="break"><tr><td></td></tr></table>
-      <div class="news-section">
+      <div id="carousel1" class="carousel slide carousel-custom news-carousel" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-caption">
+              <div class="news-section">
+                <a class="image-link" href="#"><img class="news-image" src="../images/home/1.jpg"></a>
+                <div class="news-description-parent">
+                  <a class="news-title-link" href=""><span class="news-description des-title">OFIS lecture_Casabella_Milano</span></a>
+                  <table class="break"><tr><td></td></tr></table>
+                  <p class="news-description">Where : Milano, Casabellalaboratorio, via Vigevano 8<br>When : 18:00h, 24. September 2018</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <!--<div class="news-section">
         <a class="image-link" href="#"><img class="news-image" src="../images/home/1.jpg"></a>
         <div class="news-description-parent">
           <a class="news-title-link" href=""><span class="news-description des-title">OFIS lecture_Casabella_Milano</span></a>
@@ -204,7 +239,7 @@
           <table class="break"><tr><td></td></tr></table>
           <p class="news-description">Where : Milano, Casabellalaboratorio, via Vigevano 8<br>When : 18:00h, 24. September 2018</p>
         </div>
-      </div>
+      </div>-->
 
       <a id="show-more" href="archive.html">archive</a>
       <div class="spacer s-home-1"></div>
