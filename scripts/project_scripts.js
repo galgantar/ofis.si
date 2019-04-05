@@ -16,18 +16,21 @@ function hideMap() {
 }
 
 function showMoreText() {
-  let hiddenTexts = document.querySelectorAll(".project-read-more");
   let button = document.querySelector(".read-more-button");
-  if (getComputedStyle(hiddenTexts[0]).display == "none") {
+  let paragraphs = document.querySelectorAll(".project-description-row .col-12 .project-description");
+
+  if (paragraphs[0].style.webkitLineClamp == "") {
+    console.log('kazem');
     button.innerHTML = "Read less";
-    hiddenTexts.forEach(function(element){
-      element.style.display =  "inline";
+    paragraphs.forEach(function(element){
+      element.style.webkitLineClamp = "unset";
     });
   }
   else {
+    console.log('skrivam');
     button.innerHTML = "Read more";
-    hiddenTexts.forEach(function(element){
-      element.style.display =  null;
+    paragraphs.forEach(function(element){
+      element.style.webkitLineClamp = "";
     })
   }
 }
