@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="sl">
+  <head>
+    <!--Icon-->
+    <link rel="shortcut icon" href="../../../images/other/favicon.ico">
+
+    <title>Winter cabin on mount kanin</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!--Mapbox-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <script src="../../../scripts/main_scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../styles/custom.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Gal Gantar, gantar.gal@gmail.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <img class="project-fullscreen-image" src="../../../images/projects/public/winter_cabin_mount_kanin/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_V.jpg">
+    <div class="wrapper">
+      <div class="spacer s-project-1"></div>
+      <div class="page-box">
+        <span class="page-title">JAVNI</span>
+        <span class="page-type">projekti</span>
+      </div>
+      <a class="page-back-box" href="../../public.html">
+        <span class="back-button"><</span>
+        <span class="page-button-description">nazaj</span>
+      </a>
+      <a class="page-back-box back-button-2" href="../../home.html">
+        <span class="back-button">></span>
+        <span class="page-button-description">domov</span>
+      </a>
+      <h1>WINTER CABIN ON MOUNT KANIN</h1>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="container">
+        <div class="row quick-facts">
+          <div class="col-12 col-sm-6">
+            <div class="project-databox">
+              <span class="project-datatype">lokacija</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field">Mount Kanin, SI</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">&nbsp</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data project-location-field"><span class="map-button-text">zemljevid</span><a class="show-map-button" onclick="hideMap();"><img class="show-map-image" src="../../../images/other/arrow_down.svg"></a></span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">površina</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">9.7m²</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">leto</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">2013 - 2016</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <table class="break-table removing-break"><tr><td></td></tr></table>
+            <div class="project-databox">
+              <span class="project-datatype">program</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">winter cabin</span>
+            </div>
+              <div class="project-databox">
+              <span class="project-datatype">naročnik</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">PD Bovec</span>
+            </div>
+            <table class="break-table"><tr><td></td></tr></table>
+              <div class="project-databox">
+              <span class="project-datatype">tip</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">zavetje</span>
+            </div>
+            <div class="project-databox">
+              <span class="project-datatype">status</span>
+              <table class="project-vertical-line"><tr><td></td></tr></table>
+              <span class="project-info-data">izvedeno</span>
+            </div>
+          </div>
+        </div>
+        <div class="row map-row">
+          <div class="col-12">
+            <div class="maphost">
+              <div id='map'></div>
+            </div>
+            <script>
+              mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FsZyIsImEiOiJjanJmNW9hNHIxYm1tM3ltcjI2aXU0MDIzIn0.7pycMDkcQIe7rzpcCJId9g';
+              const map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/galg/cjry55l6o16ab1fp312uf8hyi',
+              center: [15.150,46.069],
+              zoom: 6.5
+              });
+
+              map.on('click', function(e) {
+                var features = map.queryRenderedFeatures(e.point, {
+                  layers: ['ofis-projects']
+                });
+
+                if (!features.length) {
+                  return;
+                }
+
+                var feature = features[0];
+
+                var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                  .setLngLat(feature.geometry.coordinates)
+                  .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+                  .setLngLat(feature.geometry.coordinates)
+                  .addTo(map);
+              });
+            </script>
+          </div>
+        </div>
+        <div class="row project-description-row">
+          <div class="col-12 col-sm-6 background-grey project-spacing-bottom">
+            <p class="project-description">
+              The research for the Cabin was initiated by OFIS arhitekti and CBD structural engineers in collaboration with PZS,  PD Bovec, JZS, Permiz d.o.o. and Ortar in Jerman d.o.o.to develop Self-contained wooden shell, which resist extreme conditions on top of the mountain
+              The challenge is to install real objects, shelters in 1:1 on remote sites and study their response to extreme weather, radical temperature shifts, snow and rugged terrain. The harsh conditions of wind, snow, landslides, terrain, and weather require a response of specific architectural forms, structures and concept.
+              The site is accessible only by climbing or helicopter – the modules and loads are prepared according to the maximum weight and equilibrium limits.
+              Its position within the wilderness requires respect of natural resources ensuring the shelter stability while having a minimal impact on the ground.
+              <br><br>
+              Kanin is a mountain above a small town, Bovec, with beautiful resorts around the valley. The area is also important due to battles that took place during the World War I. Soldiers were fighting along the Isonzo front and many remains of the battle can still be found in the area. In collaboration with Slovenijan mountaineer association and PD Bovec, this particular site was chosen because of its 360-degree views over Slovenija and Italy, and spectacular views to Triglav, Soca Valley and Adriatic sea. It will become a destination for hikers, climbers, cavers, mountaineers, nature lovers and romantics.
+              <br><br>
+              Weather conditions are very harsh, especially during the winter. Snow cover lasts more than half of year.
+              The area of Kanin is known for rainfall and extreme snow records. During the winter more than 10 meters of snow can fall. Strong rainstorms and winds can hit this place – rainfall record in Bovec for one day is 363 litres/m2. Mountain area is full of caves and abysses, earthquakes occasionally occur.
+              <br><br>
+              Concept<br>
+              Kanin Winter Cabin forms a compact wooden volume organized with three floor resting platforms. These platforms are hanging towards the valley and a large glazed panoramic window offers astonishing views. A cantilevered overhang, resting part of the cabin, reaches the smallest footprint on the rock. The interior design  dictates modesty, subordinate to the function, providing accommodation for up to nine mountaineers.
+              <br><br>
+              The cabin settlement and transportation was an extremely difficult task. It was realized by the Slovene Armed Forces helicopter crew.  Bad weather and unexpected turbulences lead to the cabin being placed and fixed on site at the third attempt. However, the challenge of the project is to gain new knowledge through unexpected weather conditions.
+              <br><br>
+              Winter cabin has been fully implemented with donations, also the setup resulted a lot of hard working volunteer hours.
+            </p>
+            <a class="read-more-button" onclick="showMoreText();">Preberi več</a>
+          </div>
+          <div class="col-12 col-sm-6 background-grey">
+            <p class="project-description">
+              The following team developed the final design:<br>
+              Winter Cabin on Mount Kanin<br>
+              <br>
+              Architects: OFIS arhitekti<br>
+              Project Team /<br>
+              Rok Oman<br>
+              Spela Videcnik<br>
+              Janez Martincic<br>
+              Andrej Gregoric<br>
+              Sara Carciotti<br>
+              Jamie Lee<br>
+              Maria Della Mea<br>
+              Vincenzo Roma<br>
+              Andrea Capretti<br>
+              Jade Manbodh<br>
+              Sam Eadington<br>
+              Roberta Costa<br>
+              Soo Woo<br>
+              <br>
+              Structural Engineering and Principal Contractor: CBD Contemporary Building Design <br>
+              Project Team / Bruno Dujic, Jure Jancar<br>
+              Execution Team/ Jure Jancar, Ziga Stepisnik, Martin Gradisnik<br>
+              <br>
+              Contractor: <br>
+              Permiz / Bostjan Perme<br>
+              Matevz Jerman, Ortar in Jerman d.o.o.<br>
+              <br>
+              Organization support<br>
+              PZS Planinska zveza Slovenije / Matej Planko, Dusan Prasnikar<br>
+              PD Bovec / Robert Rot<br>
+              Turistično društvo Bovec / Janko Humar<br>
+              <br>
+              Winter Cabin maintainance: PD Bovec<br>
+              PD Bovec / Rober Rot<br>
+              PD Bovec / Milivoj Sulin<br>
+              <br>
+              Helicopter Flights:<br>
+              Slovene Armed Forces helicopter crew <br>
+              Chief pilot, Davorin Draginc<br>
+              Co-pilot , Peter Paskulin<br>
+              Pilot technican, Grega Ponikvar<br>
+              Pilot rescuer, Dusan Hrncic<br>
+              <br>
+              On Site Construction team:<br>
+              Janez Martincic, Andrej Gregoric, Isa Plibersek, Matevz Jerman, Davor Rozman, Nikolaj Gregoric, Robert Rehar, Claudio Bratos, Andrej Fratnik, Matej in Jernej Naglost, Marko Plevelj, Gregor Plevelj, Miha Luzar, Aljaz Hribar, Marjan Kogovsek, Kristina Seljak, Tjasa Rutar, Gregor Basiaco, Luka Zalokar, Zdenka Zitko, Blaz Ortar, Jernej Ortar, Uros Grilj, Erik Cudr, Marina Pintar, Gregor Pintar, Matej Blatnik , Marjan Baricic, Andrej Drevensek, Jerry Ruditser, William Gibson, Robert Rot
+              <br>
+              Sponsors and Donators<br>
+              Lidl Slovenija, Komenda, Slovenija<br>
+              Zavarovalnica Triglav, Slovenija<br>
+              <br>
+              Timber CLT Construction: CBD d.o.o., Celje, Slovenija<br>
+              Glass: Reflex, Slovenija and Guardian Europe, Luxemburg <br>
+              Thermal and fire safe Insulations : ROCKWOOL Adriatic, Croatia<br>
+              Façade Cladding : Alucubond and Ravago, Store,  Slovenija <br>
+              Anchors : Hilti, Trzin, Slovenija<br>
+              Steele cabels fixation :  Marmet d.o.o. , Ajdovscina, Slovenija<br>
+              Abyss fall protection: Geobrugg AG, Switzerland<br>
+              Façade cladding fixation screews, Epro d.o.o.<br>
+              Power Equipment : AS Domzale Moto center d.o.o. ,Trzin<br>
+              <br>
+              Photo and courtesy@ : <br>
+              Janez Martincic (info@jan-mar.net)<br>
+              <br>
+              location <br>
+              Mountain Kanin, Slovenija <br>
+              <br>
+              status <br>
+              project 2013 <br>
+              construction start 2015<br>
+              completion 2016
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>foto@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel1" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/1_OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_10.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/2_OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_14.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/3_OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_28.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/3_WINTER-CABIN-MOUNT-KANIN_OFIS_a_FOTO@JANEZ-MARTINCIC_11_2.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/4_OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_30.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/5_OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_33.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/OFIS_WINTER-CABIN- KANIN_ONSITE_08.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/OFIS_WINTER-CABIN- KANIN_ONSITE_09.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/OFIS_WINTER-CABIN- KANIN_ONSITE_10.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/01_SLIDER_PORTRAIT/OFIS_WINTER-CABIN- KANIN_ONSITE_15.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel2" class="carousel slide carousel-custom" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@ALES-GREGORIC_01.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@ALES-GREGORIC_07.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@ALES-GREGORIC_08.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_06.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_08.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_15.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_17.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_19.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_25.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_29.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_31.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_32.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/02_SLIDER_LANDSCAPE/OFIS_WINTER-CABIN-KANIN_FOTO@JANEZ-MARTINCIC_34.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <h3>video@</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div class="iframe-container" style="padding-top: 57%">
+        <iframe class="responsive-iframe" src="https://player.vimeo.com/video/202721366" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+
+      <h3>koncept</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel3" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/03_SLIDER-CONCEPT/0_transportation-carriage.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/03_SLIDER-CONCEPT/1_program-function.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/03_SLIDER-CONCEPT/inside-out-diagram.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/03_SLIDER-CONCEPT/structure-exploded.jpg" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h3>načrti</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="spacer s-project-2"></div>
+      <div id="carousel4" class="carousel slide carousel-custom carousel-black" data-interval="false">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/1_site-transportation.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/2_roof.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/3_plan.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/4_cross-section.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/5_longitudinal-section.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/6_east-elevation.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/7_north-south-elevation.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/8_west-elevation.JPG" alt="">
+          </div>
+          <div class="carousel-item">
+                  <img class="carousel-image-custom" src="../../../images/projects/public/winter_cabin_mount_kanin/04_SLIDER-PLANS/9_detail.JPG" alt="">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel4" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <!--<h3>related media...</h3>
+      <table class="break"><tr><td></td></tr></table>
+      <div class="publication width-full">
+        <div class="publication-name publicaton-name-main">
+          <a class="description bold width-100" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description width-100">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>
+      <div class="publication half">
+        <div class="publication-name">
+          <a class="description bold" href ="">Habitation in Extreme Environments</a>
+          <table class="publication-break"><tr><td></td></tr></table>
+          <span class="description">Habitation in Extreme Environments</span>
+        </div>
+        <a class="image-link" href=""><img class="publication-image" src="../../../images/projects/house/villa_under_extension/publications/2G_resize_.jpg"></a>
+      </div>-->
+      <div class="spacer s-project-3"></div>
+    </div>
+    <script src="../../../scripts/project_scripts.js"></script>
+    <script src="../../../scripts/adjust_carousel.js"></script>
+    <script src="../../../scripts/add_carousel_indicators.js"></script>
+  </body>
+</html>

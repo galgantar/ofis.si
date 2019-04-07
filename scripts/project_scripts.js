@@ -20,15 +20,21 @@ function showMoreText() {
   let paragraphs = document.querySelectorAll(".project-description-row .col-12 .project-description");
 
   if (paragraphs[0].style.webkitLineClamp == "") {
-    console.log('kazem');
-    button.innerHTML = "Read less";
+    if (document.querySelector("html").getAttribute("lang") == "en"){
+      button.innerHTML = "Read less";
+    }else{
+      button.innerHTML = "Preberi manj";
+    }
     paragraphs.forEach(function(element){
       element.style.webkitLineClamp = "unset";
     });
   }
   else {
-    console.log('skrivam');
-    button.innerHTML = "Read more";
+    if (document.querySelector("html").getAttribute("lang") == "en"){
+      button.innerHTML = "Read more";
+    }else{
+      button.innerHTML = "Preberi več";
+    }
     paragraphs.forEach(function(element){
       element.style.webkitLineClamp = "";
     })
