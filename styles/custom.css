@@ -33,7 +33,7 @@ h4 {
   margin: 15% 0 1.5% 0;
 }
 *, ::after, ::before {
-    box-sizing: unset;
+    box-sizing: border-box;
 }
 a:focus {
   outline: none !important;
@@ -268,13 +268,14 @@ span.title.we {
 span.page-title {
   display: block;
   position: absolute;
-  top: 36%;
+  top: 44%;
   left: 0;
   right: 0;
   box-sizing: border-box;
   font-size: 226%;
   line-height: 100%;
   font-weight: 600;
+  transform: translateY(-50%);
 }
 span.page-subtitle {
   display: block;
@@ -693,17 +694,13 @@ p.project-description {
     width: 0.1em !important;
   }
   .box {
-    font-size: 110%;
     border: 0.7px solid black;
-  }
-  .special-font-size-1 {
-    font-size: 120% !important;
   }
   .break-table {
     border-bottom: 0.01rem solid black;
   }
   .page-box {
-    border: 1px solid black;
+    border: 0.3px solid black;
   }
   #show-more {
     font-size: 150% !important;
@@ -945,7 +942,10 @@ p.project-description {
   font-size: 165% !important;
 }
 .size-poslovni {
-  font-size: 165% !important;
+  font-size: 160% !important;
+}
+.size-kolektivni {
+  font-size: 130% !important;
 }
 .carousel-selected .carousel-inner .carousel-item .carousel-caption {
   position: absolute;

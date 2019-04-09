@@ -40,3 +40,10 @@ function showMoreText() {
     })
   }
 }
+
+//Main script
+descriptions = document.querySelectorAll(".project-description");
+
+descriptions.forEach(function(element){
+  element.innerHTML = element.innerHTML.replace(new RegExp('\r?\n','g'), '<br>').substr(4);
+});
