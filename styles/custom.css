@@ -744,6 +744,12 @@ p.project-description {
   .carousel-title {
     font-size: 200% !important;
   }
+  #show-more {
+    font-size: 160% !important;
+  }
+  .show-news {
+    font-size: 180% !important;
+  }
 }
 .display-none {
   display: none;
