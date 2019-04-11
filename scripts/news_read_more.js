@@ -6,9 +6,9 @@ function show_news() {
     archive.style.display = "inline-block";
 
     if (lang == "en") {
-      button.innerHTML = "Show less";
+      button.innerHTML = "show less";
     }else {
-      button.innerHTML = "Pokaži manj";
+      button.innerHTML = "pokaži manj";
     }
   }
   else {
@@ -18,9 +18,9 @@ function show_news() {
     archive.style.display = "none";
 
     if (lang == "en") {
-      button.innerHTML = "Show more";
+      button.innerHTML = "show more";
     }else {
-      button.innerHTML = "Pokaži več";
+      button.innerHTML = "pokaži več";
     }
   }
 

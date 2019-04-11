@@ -28,9 +28,12 @@ h3 { /*used as a title in projects page*/
 }
 h4 {
   clear: both;
-  font-size: 120%;
+  font-size: 160%;
   line-height: 100%;
   margin: 15% 0 1.5% 0;
+}
+.h4-custom {
+  font-size: 120%;
 }
 *, ::after, ::before {
     box-sizing: border-box;
@@ -247,9 +250,10 @@ span.title.we {
   display: block;
   line-height: 100%;
   font-weight: 400;
-  margin: 2% 0;
+  margin: 3% 0;
   color: black;
   text-decoration: none;
+  font-size: 85%;
 }
 .width-100 {
   width: 100%;
@@ -481,6 +485,9 @@ a.title-1 {
 .page-box.we {
   background-color: black !important;
 }
+.we-row {
+  display: flex;
+}
 .page-title.we {
   top: 43% !important;
   font-size: 300% !important;
@@ -511,10 +518,14 @@ a.title-1 {
   display: block;
   width: 100%;
 }
+.content-list-small {
+  font-size: 90% !important;
+}
 .we-content-list {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
+  margin-top: 3%;
 }
 .we-content-link {
   color: brown;
@@ -540,6 +551,10 @@ img.architect {
 .architect-name {
   font-size: 120%;
   font-weight: 600;
+  display: inline-block;
+  border-bottom: 1px solid black;
+  width: 95%;
+  padding-bottom: 1%;
 }
 .we-row:after {
   width: 100%;
@@ -552,6 +567,11 @@ img.architect {
 }
 .we-link {
   color: brown;
+}
+.we-list-year {
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-weight: 600;
 }
 p.we-paragraph {
   margin: 5% 0;
@@ -582,7 +602,7 @@ p.we-paragraph {
   float: right;
 }
 .press-small-image {
-  margin-bottom: 20%;
+  margin-bottom: 27%;
 }
 .width-full {
   width: 100%;
@@ -605,6 +625,8 @@ p.we-paragraph {
 }
 .bold {
   font-weight: bold !important;
+  font-size: 125%;
+  margin-bottom: 0% !important;
 }
 .we-year {
   font-weight: bold;
@@ -749,6 +771,9 @@ p.project-description {
   }
   .show-news {
     font-size: 180% !important;
+  }
+  .architect-name {
+    border-width: 0.1px !important;
   }
 }
 .display-none {
@@ -935,6 +960,8 @@ p.project-description {
   display: block;
   text-align: center;
   margin-top: 2%;
+  font-size: 95%;
+  font-family: arial;
 }
 .show-news:hover {
   cursor: pointer;
@@ -984,17 +1011,18 @@ p.project-description {
   left: 0;
   z-index: 15;
   color: #fff;
-  text-align: center;
+  text-align: left;
   width: 100%;
   background: #00000066;
-  height: 19%;
-  padding-top: 3%;
+  height: 15%;
+  padding-top: 1%;
   padding-bottom: 2%;
 }
 .carousel-title {
-  font-size: 120%;
+  font-size: 100%;
   color: white;
   text-decoration: none;
+  margin-left: 3%;
 }
 .carousel-title:hover {
   color: white;
