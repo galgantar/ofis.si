@@ -59,6 +59,9 @@ body {
   #links {
     left: 50%;
     transform: translateX(-50%);
-    font-size: 450%;
+    font-size: 250%;
+  }
+  #logo-container {
+	width: 100% !important;  
   }
 }
