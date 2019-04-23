@@ -1,5 +1,5 @@
 function show_news() {
-  if (sections[1].style.display == "" || sections[1].style.display == "none") {
+  if (sections[0].style.display == "" || sections[0].style.display == "none") {
     sections.forEach(function(element){
       element.style.display = "block";
     });
@@ -26,7 +26,7 @@ function show_news() {
 
 }
 
-sections = Array.prototype.slice.call(document.querySelectorAll(".news-section")).slice(1);
+sections = Array.prototype.slice.call(document.querySelectorAll(".news-section")).slice(5);
 archive = document.querySelector("#show-more");
 button = document.querySelector(".show-news");
 lang = document.querySelector("html").getAttribute("lang");
