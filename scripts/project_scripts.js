@@ -19,24 +19,24 @@ function showMoreText() {
   let button = document.querySelector(".read-more-button");
   let paragraphs = document.querySelectorAll(".project-description-row .col-12 .project-description");
 
-  if (paragraphs[0].style.webkitLineClamp == "") {
+  if (paragraphs[0].style.height == "") {
     if (document.querySelector("html").getAttribute("lang") == "en"){
       button.innerHTML = "Read less";
     }else{
       button.innerHTML = "Preberi manj";
     }
     paragraphs.forEach(function(element){
-      element.style.webkitLineClamp = "unset";
+      element.style.height = "auto";
     });
   }
   else {
     if (document.querySelector("html").getAttribute("lang") == "en"){
       button.innerHTML = "Read more";
     }else{
-      button.innerHTML = "Preberi več";
+      button.innerHTML = "Preberi ve\u010d";
     }
     paragraphs.forEach(function(element){
-      element.style.webkitLineClamp = "";
+      element.style.height = "";
     })
   }
 }
